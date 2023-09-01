@@ -57,5 +57,4 @@ public class Ucesnik {
     public int hashCode() {
         return Objects.hash(id, Ime_i_Prezime, Rejting, Broj_Osvojenih_Bodova);
     }
-
 }
