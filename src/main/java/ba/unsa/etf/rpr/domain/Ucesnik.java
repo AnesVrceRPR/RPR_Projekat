@@ -28,4 +28,12 @@ public class Ucesnik {
         Rejting = rejting;
     }
 
+    public int getBroj_Osvojenih_Bodova() {
+        return Broj_Osvojenih_Bodova;
+    }
+
+    public void setBroj_Osvojenih_Bodova(int broj_Osvojenih_Bodova) {
+        Broj_Osvojenih_Bodova = broj_Osvojenih_Bodova;
+    }
+
 }
