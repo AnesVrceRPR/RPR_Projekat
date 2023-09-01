@@ -11,4 +11,12 @@ public class UcesnikDaoSQLImpl{
     }
 
     public void setId(int id) {this.id = id;}
+
+    public String getIme_i_Prezime() {
+        return Ime_i_Prezime;
+    }
+
+    public void setIme_i_Prezime(String Ime_i_Prezime) {
+        this.Ime_i_Prezime = Ime_i_Prezime;
+    }
 }
