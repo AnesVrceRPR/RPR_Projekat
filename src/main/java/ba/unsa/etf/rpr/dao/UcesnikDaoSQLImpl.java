@@ -39,5 +39,27 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         return null;
     }
 
+    @Override
+    public Ucesnik add(Ucesnik ucesnik) {
+        String insert = "INSERT INTO Ucesnik(Ime_i_Prezime) VALUES(?)";
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+
+            stmt.setString(1, ucesnik.getIme_i_Prezime());
+
+            stmt.executeUpdate();
+
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next(); // we know that there is one key
+            ucesnik.setId(rs.getInt(1)); //set id to return it back
+
+            return ucesnik;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 }
