@@ -61,5 +61,20 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         return null;
     }
 
+    @Override
+    public Ucesnik update(Ucesnik ucesnik) {
+        String update = "UPDATE Ucesnik SET Ime_i_Prezime = ? WHERE id = ?";
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
+            stmt.setObject(1, ucesnik.getIme_i_Prezime());
+            stmt.setObject(2, ucesnik.getId());
+            stmt.executeUpdate();
+            return ucesnik;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 }
