@@ -1,7 +1,8 @@
 package ba.unsa.etf.rpr.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import ba.unsa.etf.rpr.domain.Ucesnik;
+
+import java.sql.*;
 
 public class UcesnikDaoSQLImpl implements UcesnikDao {
 
@@ -15,7 +16,28 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         }
     }
 
-
+    @Override
+    public Ucesnik getById(int id) {
+        String query = "SELECT * FROM Ucesnik WHERE id = ?";
+        try {
+            PreparedStatement stmt = this.connection.prepareStatement(query);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()) { // result set is iterator.
+                Ucesnik ucesnik = new Ucesnik();
+                ucesnik.setId(rs.getInt("id"));
+                ucesnik.setIme_i_Prezime(rs.getString("Ime_i_Prezime"));
+                ucesnik.setRejting(rs.getInt("Rejting"));
+                rs.close();
+                return ucesnik;
+            } else {
+                return null; // if there is no elements in the result set return null
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // poor error handling
+        }
+        return null;
+    }
 
 
 }
