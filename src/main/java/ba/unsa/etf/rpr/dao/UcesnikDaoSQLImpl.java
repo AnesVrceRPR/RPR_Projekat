@@ -3,6 +3,8 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UcesnikDaoSQLImpl implements UcesnikDao {
 
@@ -86,6 +88,28 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         }catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public List<Ucesnik> getAll() {
+        String query = "SELECT * FROM Ucesnik";
+        List<Ucesnik> ucesnici = new ArrayList<Ucesnik>();
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){ // result set is iterator.
+                Ucesnik ucesnik = new Ucesnik();
+                ucesnik.setId(rs.getInt("id"));
+                ucesnik.setIme_i_Prezime(rs.getString("Ime_i_Prezime"));
+                ucesnik.setRejting(rs.getInt("Rejting"));
+                ucesnici.add(ucesnik);
+            }
+            rs.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace(); // poor error handling
+        }
+        return ucesnici;
     }
 
 }
