@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.NoviProzor"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controller.NoviKontroler">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <ListView prefHeight="200.0" prefWidth="200.0" />
+            <ListView prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <center>
+            <Label alignment="BOTTOM_CENTER" prefHeight="62.0" prefWidth="260.0" text="Lista prijavljenih igrača" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
+         </center>
+         <bottom>
+            <HBox prefHeight="44.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="222.0" text="Ime i prezime" />
+                  <Label alignment="CENTER" prefHeight="44.0" prefWidth="227.0" text="Rejting" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <bottom>
+            <HBox prefHeight="61.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="110.0" prefWidth="203.0" />
+                  <Label alignment="CENTER" prefHeight="37.0" prefWidth="151.0" text="Rejting" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="300.0" text="Prijava igrača" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </center>
+         <right>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="52.0" text="Button" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </children>
+</GridPane>
