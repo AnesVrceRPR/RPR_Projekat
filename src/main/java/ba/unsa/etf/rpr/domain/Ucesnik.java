@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.util.Objects;
+
 public class Ucesnik {
     private int id;
     private String Ime_i_Prezime;
@@ -50,4 +52,10 @@ public class Ucesnik {
         Ucesnik ucesnik = (Ucesnik) o;
         return id == ucesnik.id;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, Ime_i_Prezime, Rejting, Broj_Osvojenih_Bodova);
+    }
+
 }
