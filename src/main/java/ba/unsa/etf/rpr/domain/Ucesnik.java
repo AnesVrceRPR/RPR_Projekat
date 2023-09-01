@@ -41,4 +41,13 @@ public class Ucesnik {
         return "id = " + id + ", Ime i Prezime: " + Ime_i_Prezime + ", Rejting: " + Rejting +
                 ", Broj osvojenih bodova: " + Broj_Osvojenih_Bodova;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Ucesnik ucesnik = (Ucesnik) o;
+        return id == ucesnik.id;
+    }
 }
