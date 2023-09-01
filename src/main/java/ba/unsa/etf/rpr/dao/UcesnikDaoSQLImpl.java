@@ -19,4 +19,15 @@ public class UcesnikDaoSQLImpl{
     public void setIme_i_Prezime(String Ime_i_Prezime) {
         this.Ime_i_Prezime = Ime_i_Prezime;
     }
+
+    public int getRejting() {
+        return Rejting;
+    }
+
+    public void setRejting(int rejting) {
+        Rejting = rejting;
+    }
+
+
+
 }
