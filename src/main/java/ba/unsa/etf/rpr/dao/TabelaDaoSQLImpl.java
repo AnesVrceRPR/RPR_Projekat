@@ -96,5 +96,14 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         }
     }
 
-
+    public void delete(int id) {
+        String delete = "DELETE FROM Tabela WHERE id = ?";
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(delete, Statement.RETURN_GENERATED_KEYS);
+            stmt.setObject(1, id);
+            stmt.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
