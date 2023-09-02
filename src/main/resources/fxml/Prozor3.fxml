@@ -88,7 +88,7 @@
          <font>
             <Font size="24.0" />
          </font></Button>
-      <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="219.0" text="Potvrdi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button fx:id="potvrda" mnemonicParsing="false" onAction="#azurirajTabelu" prefHeight="69.0" prefWidth="219.0" text="Potvrdi" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font size="27.0" />
          </font></Button>

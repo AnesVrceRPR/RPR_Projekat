@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.controller;
 
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Ucesnik;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -31,5 +32,10 @@ public class kontroler3 implements Initializable {
         Collections.sort(lista);
 
         tabela.getItems().addAll(lista);
+    }
+
+    public void azurirajTabelu(ActionEvent actionEvent) {
+
+
     }
 }
