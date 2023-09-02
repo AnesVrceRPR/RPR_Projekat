@@ -6,8 +6,10 @@ import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.Collections;
@@ -24,6 +26,15 @@ public class kontroler3 implements Initializable {
     public Label igrac6;
     public Label igrac8;
     public ListView tabela;
+    public TextField igr2;
+    public TextField igr4;
+    public TextField igr6;
+    public TextField igr8;
+    public Button potvrda;
+    public TextField igr1;
+    public TextField igr3;
+    public TextField igr5;
+    public TextField igr7;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
