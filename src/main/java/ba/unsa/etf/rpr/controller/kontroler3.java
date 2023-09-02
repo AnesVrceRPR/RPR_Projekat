@@ -92,6 +92,20 @@ public class kontroler3 implements Initializable {
             PronadjiIgraca(igr2.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr2.getText()).getBroj_Osvojenih_Bodova() + 1);
         }
 
+        if(Integer.parseInt(igr3.getText()) == 0 && Integer.parseInt(igr4.getText()) == 0)
+        {
+            PronadjiIgraca(igr3.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr3.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            PronadjiIgraca(igr4.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr4.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+        }
+        if(Integer.parseInt(igr3.getText()) == 1 && Integer.parseInt(igr4.getText()) == 0)
+        {
+            PronadjiIgraca(igr3.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr3.getText()).getBroj_Osvojenih_Bodova() + 1);
+        }
+        if(Integer.parseInt(igr3.getText()) == 0 && Integer.parseInt(igr4.getText()) == 1)
+        {
+            PronadjiIgraca(igr4.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr4.getText()).getBroj_Osvojenih_Bodova() + 1);
+        }
+
 
 
 
