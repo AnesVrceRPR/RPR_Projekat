@@ -43,11 +43,13 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
 
     @Override
     public Ucesnik add(Ucesnik ucesnik) {
-        String insert = "INSERT INTO Ucesnik(Ime_i_Prezime) VALUES(?)";
+        String insert = "INSERT INTO Ucesnik(Ime_i_Prezime, Rejting, Broj_Osvojenih_Bodova) VALUES(?, ?, ?)";
         try{
             PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
             stmt.setString(1, ucesnik.getIme_i_Prezime());
+            stmt.setInt(2, ucesnik.getRejting());
+            stmt.setInt(3, ucesnik.getBroj_Osvojenih_Bodova());
 
             stmt.executeUpdate();
 

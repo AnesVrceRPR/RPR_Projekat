@@ -53,13 +53,13 @@ public class TabelaDaoSQLImpl implements TabelaDao {
             PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
             stmt.setString(1, tabela.getMjesto1());
-            stmt.setString(1, tabela.getMjesto2());
-            stmt.setString(1, tabela.getMjesto3());
-            stmt.setString(1, tabela.getMjesto4());
-            stmt.setString(1, tabela.getMjesto5());
-            stmt.setString(1, tabela.getMjesto6());
-            stmt.setString(1, tabela.getMjesto7());
-            stmt.setString(1, tabela.getMjesto8());
+            stmt.setString(2, tabela.getMjesto2());
+            stmt.setString(3, tabela.getMjesto3());
+            stmt.setString(4, tabela.getMjesto4());
+            stmt.setString(5, tabela.getMjesto5());
+            stmt.setString(6, tabela.getMjesto6());
+            stmt.setString(7, tabela.getMjesto7());
+            stmt.setString(8, tabela.getMjesto8());
 
             stmt.executeUpdate();
 
@@ -77,7 +77,7 @@ public class TabelaDaoSQLImpl implements TabelaDao {
 
     @Override
     public Tabela update(Tabela tabela) {
-        String update = "UPDATE Tabela SET Mjesto1 = ?, Mjesto2 = ?, Mjesto3 = ?, Mjesto4 = ?, Mjesto5 = ?, Mjesto6 = ?, Mjesto7 = ?, Mjesto1 = 8 WHERE id = ?";
+        String update = "UPDATE Tabela SET Mjesto1 = ?, Mjesto2 = ?, Mjesto3 = ?, Mjesto4 = ?, Mjesto5 = ?, Mjesto6 = ?, Mjesto7 = ?, Mjesto8 = ? WHERE id = ?";
         try{
             PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
             stmt.setObject(1, tabela.getMjesto1());

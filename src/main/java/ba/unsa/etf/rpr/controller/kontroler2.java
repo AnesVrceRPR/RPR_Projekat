@@ -88,7 +88,7 @@ public class kontroler2 implements Initializable {
         tabela.setMjesto8(lista.get(7).getIme_i_Prezime());
 
         TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
-        //tabelaDaoSQL.update(tabela);
+        tabelaDaoSQL.update(tabela);
 
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor3.fxml"));
