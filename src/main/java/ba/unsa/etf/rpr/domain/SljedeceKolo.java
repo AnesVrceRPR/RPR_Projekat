@@ -12,5 +12,11 @@ public class SljedeceKolo {
         this.igrac1 = igrac1;
     }
 
+    public String getIgrac2() {
+        return igrac2;
+    }
 
+    public void setIgrac2(String igrac2) {
+        this.igrac2 = igrac2;
+    }
 }
