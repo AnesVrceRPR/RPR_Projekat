@@ -74,12 +74,17 @@ public class NoviKontroler implements Initializable {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
-        Collections.sort(lista);
-
         for(Ucesnik ucesnik : lista)
         {
-            System.out.println(ucesnik.getIme_i_Prezime());
+            System.out.println(ucesnik.getIme_i_Prezime() + "  " + ucesnik.getBroj_Osvojenih_Bodova());
         }
+
+        Collections.sort(lista);
+
+        /*for(Ucesnik ucesnik : lista)
+        {
+            System.out.println(ucesnik.getIme_i_Prezime());
+        }*/
 
         //Tabela tabela = new Tabela();
 

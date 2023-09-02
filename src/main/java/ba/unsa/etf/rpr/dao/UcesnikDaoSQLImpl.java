@@ -102,6 +102,7 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
                 ucesnik.setId(rs.getInt("id"));
                 ucesnik.setIme_i_Prezime(rs.getString("Ime_i_Prezime"));
                 ucesnik.setRejting(rs.getInt("Rejting"));
+                ucesnik.setBroj_Osvojenih_Bodova(rs.getInt("Broj_Osvojenih_Bodova"));
                 ucesnici.add(ucesnik);
             }
             rs.close();
