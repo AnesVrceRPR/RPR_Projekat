@@ -78,6 +78,8 @@ public class kontroler3 implements Initializable {
     public void azurirajTabelu(ActionEvent actionEvent) {
 
         UcesnikDaoSQLImpl ucesnikDaoSQLImpl = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista1 = ucesnikDaoSQLImpl.getAll();
+        tabela.getItems().removeAll(lista1);
 
         Ucesnik ucesnik1 = new Ucesnik();
         Ucesnik ucesnik2 = new Ucesnik();
@@ -170,7 +172,6 @@ public class kontroler3 implements Initializable {
         ucesnikDaoSQLImpl.update(ucesnik8);
 
         List<Ucesnik> lista = ucesnikDaoSQLImpl.getAll();
-        tabela.getItems().removeAll(lista);
 
         Collections.sort(lista);
 
