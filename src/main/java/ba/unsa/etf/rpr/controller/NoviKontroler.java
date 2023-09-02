@@ -38,5 +38,24 @@ public class NoviKontroler implements Initializable {
         ListaImena.getItems().add(ucesnik);
     }
 
+    public void obrisiIgraca(ActionEvent actionEvent) {
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
+        int id = 0;
+        Ucesnik obrisani = new Ucesnik();
+
+        for(Ucesnik ucesnik : lista)
+        {
+            if(ucesnik.getIme_i_Prezime().equals(label3.getText()))
+            {
+                obrisani = ucesnik;
+                id = ucesnik.getId();
+            }
+        }
+
+        ucesnikDaoSQL.delete(id);
+
+        ListaImena.getItems().remove(obrisani);
+    }
 }
