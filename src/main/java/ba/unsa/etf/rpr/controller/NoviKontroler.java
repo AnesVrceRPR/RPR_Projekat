@@ -20,6 +20,7 @@ public class NoviKontroler implements Initializable {
     public TextField label2;
     public Button potvrdiBrisanje;
     public TextField label3;
+    public Button Nastavi;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
