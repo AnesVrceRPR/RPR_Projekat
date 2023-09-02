@@ -28,4 +28,12 @@ public class SljedeceKolo {
     public void setIgrac2(String igrac2) {
         this.igrac2 = igrac2;
     }
+
+    @Override
+    public String toString() {
+        return igrac1  + " " + igrac2;
+    }
+
+
+
 }
