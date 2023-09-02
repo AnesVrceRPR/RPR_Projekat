@@ -75,9 +75,11 @@ public class TabelaDaoSQLImpl implements TabelaDao {
 
     @Override
     public Tabela update(Tabela tabela) {
-        String update = "UPDATE Tabela SET Mjesto1 = ? WHERE id = ?";
+        String update = "UPDATE Tabela SET Mjesto1 = ?, Mjesto2 = ?, Mjesto3 = ?, Mjesto4 = ?, Mjesto5 = ?, Mjesto6 = ?, Mjesto7 = ?, Mjesto1 = 8 WHERE id = ?";
         try{
             PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
+            stmt.setObject(1, tabela.getMjesto1());
+            stmt.setObject(1, tabela.getMjesto1());
             stmt.setObject(1, tabela.getMjesto1());
             stmt.setObject(2, tabela.getId());
             stmt.executeUpdate();
