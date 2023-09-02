@@ -84,7 +84,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </GridPane>
-      <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="214.0" text="Sljedece Kolo" GridPane.columnIndex="2" GridPane.rowIndex="2">
+      <Button mnemonicParsing="false" onAction="#SljedeceKolo" prefHeight="70.0" prefWidth="214.0" text="Sljedece Kolo" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <font>
             <Font size="24.0" />
          </font></Button>
