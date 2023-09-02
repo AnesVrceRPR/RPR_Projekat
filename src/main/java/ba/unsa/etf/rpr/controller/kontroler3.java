@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.controller;
 
+import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -35,6 +37,17 @@ public class kontroler3 implements Initializable {
     }
 
     public void azurirajTabelu(ActionEvent actionEvent) {
+        TabelaDaoSQLImpl tabelaDaoSQLImpl = new TabelaDaoSQLImpl();
+        Tabela tabela = tabelaDaoSQLImpl.getById(0);
+
+        igrac1.setText(tabela.getMjesto1());
+        igrac2.setText(tabela.getMjesto2());
+        igrac3.setText(tabela.getMjesto3());
+        igrac4.setText(tabela.getMjesto4());
+        igrac5.setText(tabela.getMjesto5());
+        igrac6.setText(tabela.getMjesto6());
+        igrac7.setText(tabela.getMjesto7());
+        igrac8.setText(tabela.getMjesto8());
 
 
     }
