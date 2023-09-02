@@ -1,10 +1,13 @@
 package ba.unsa.etf.rpr.controller;
 
+import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Kontroler3 implements Initializable {
@@ -21,6 +24,14 @@ public class Kontroler3 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista = ucesnikDaoSQL.getAll();
+
+        for(Ucesnik ucesnik : lista)
+        {
+
+        }
+
+
     }
 }

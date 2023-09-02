@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
-public class Ucesnik {
+public class Ucesnik implements Comparable<Ucesnik>{
     private int id;
     private String Ime_i_Prezime;
     private int Rejting;
@@ -55,5 +55,11 @@ public class Ucesnik {
     @Override
     public int hashCode() {
         return Objects.hash(id, Ime_i_Prezime, Rejting, Broj_Osvojenih_Bodova);
+    }
+
+    @Override
+    public int compareTo(Ucesnik o) {
+        if(this.Broj_Osvojenih_Bodova > o.getBroj_Osvojenih_Bodova()) return 1;
+        return 0;
     }
 }

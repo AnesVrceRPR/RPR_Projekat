@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.controller;
 
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -68,6 +69,13 @@ public class NoviKontroler implements Initializable {
     }
 
     public void OtvoriNoviProzor(ActionEvent actionEvent) throws IOException {
+
+
+
+
+
+        Tabela tabela = new Tabela();
+
 
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor3.fxml"));
