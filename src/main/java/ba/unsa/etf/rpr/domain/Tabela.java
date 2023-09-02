@@ -43,5 +43,27 @@ public class Tabela {
         return mjesto8;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMjesto1(String mjesto1) {
+        this.mjesto1 = mjesto1;
+    }
+
+    public void setMjesto2(String mjesto2) {
+        this.mjesto2 = mjesto2;
+    }
+
+    public void setMjesto3(String mjesto3) {
+        this.mjesto3 = mjesto3;
+    }
+
+    public void setMjesto4(String mjesto4) {
+        this.mjesto4 = mjesto4;
+    }
 }
