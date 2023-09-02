@@ -131,7 +131,7 @@
             </GridPane>
          </children>
       </VBox>
-      <Button fx:id="Nastavi" mnemonicParsing="false" prefHeight="80.0" prefWidth="603.0" text="Nastavi" GridPane.columnSpan="2" GridPane.rowIndex="2">
+      <Button fx:id="Nastavi" mnemonicParsing="false" onAction="#OtvoriNoviProzor" prefHeight="80.0" prefWidth="603.0" text="Nastavi" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <font>
             <Font size="29.0" />
          </font></Button>
