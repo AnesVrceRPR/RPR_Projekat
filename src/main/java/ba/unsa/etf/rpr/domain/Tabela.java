@@ -87,4 +87,15 @@ public class Tabela {
     public String toString() {
         return mjesto1;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tabela tabela = (Tabela) o;
+        return id == tabela.id;
+    }
+
+
 }
