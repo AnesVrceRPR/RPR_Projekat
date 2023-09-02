@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -69,12 +71,17 @@ public class NoviKontroler implements Initializable {
     }
 
     public void OtvoriNoviProzor(ActionEvent actionEvent) throws IOException {
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
+        Collections.sort(lista);
 
+        for(Ucesnik ucesnik : lista)
+        {
+            System.out.println(ucesnik.getIme_i_Prezime());
+        }
 
-
-
-        Tabela tabela = new Tabela();
+        //Tabela tabela = new Tabela();
 
 
         Stage stage = new Stage();

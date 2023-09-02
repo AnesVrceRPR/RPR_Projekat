@@ -24,13 +24,7 @@ public class Kontroler3 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
-        List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
-        for(Ucesnik ucesnik : lista)
-        {
-
-        }
 
 
     }
