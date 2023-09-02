@@ -76,10 +76,20 @@ public class kontroler3 implements Initializable {
     }
 
     public void azurirajTabelu(ActionEvent actionEvent) {
+
+        UcesnikDaoSQLImpl ucesnikDaoSQLImpl = new UcesnikDaoSQLImpl();
+
+        Ucesnik ucesnik1 = new Ucesnik();
+        Ucesnik ucesnik2 = new Ucesnik();
+
         if(Integer.parseInt(igr1.getText()) == 0 && Integer.parseInt(igr2.getText()) == 0)
         {
-            PronadjiIgraca(igrac1.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac1.getText()).getBroj_Osvojenih_Bodova() + 0.5);
-            PronadjiIgraca(igrac2.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac2.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik1 = PronadjiIgraca(igrac1.getText());
+            ucesnik2 = PronadjiIgraca(igrac2.getText());
+            ucesnik1.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac1.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik2.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac2.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+
+            uce
         }
         if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 0)
         {
@@ -132,19 +142,19 @@ public class kontroler3 implements Initializable {
             PronadjiIgraca(igrac8.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac8.getText()).getBroj_Osvojenih_Bodova() + 1);
         }
 
-        UcesnikDaoSQLImpl ucesnikDaoSQLImpl = new UcesnikDaoSQLImpl();
-        List<Ucesnik> lista1 = ucesnikDaoSQLImpl.getAll();
 
-        ucesnikDaoSQLImpl.update(lista1.get(0));
+
+        /*ucesnikDaoSQLImpl.update(lista1.get(0));
         ucesnikDaoSQLImpl.update(lista1.get(1));
         ucesnikDaoSQLImpl.update(lista1.get(2));
         ucesnikDaoSQLImpl.update(lista1.get(3));
         ucesnikDaoSQLImpl.update(lista1.get(4));
         ucesnikDaoSQLImpl.update(lista1.get(5));
         ucesnikDaoSQLImpl.update(lista1.get(6));
-        ucesnikDaoSQLImpl.update(lista1.get(7));
+        ucesnikDaoSQLImpl.update(lista1.get(7));*/
 
         List<Ucesnik> lista = ucesnikDaoSQLImpl.getAll();
+        tabela.getItems().removeAll(lista);
 
         Collections.sort(lista);
 
@@ -161,7 +171,6 @@ public class kontroler3 implements Initializable {
         TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
         tabelaDaoSQL.update(tabela1);
 
-        tabela.getItems().removeAll(lista);
         tabela.getItems().addAll(lista);
     }
 }
