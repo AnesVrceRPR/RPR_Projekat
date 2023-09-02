@@ -82,4 +82,6 @@ public class Tabela {
     public void setMjesto8(String mjesto8) {
         this.mjesto8 = mjesto8;
     }
+
+
 }
