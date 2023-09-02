@@ -134,8 +134,18 @@ public class kontroler3 implements Initializable {
             PronadjiIgraca(igr8.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr8.getText()).getBroj_Osvojenih_Bodova() + 1);
         }
 
-
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista1 = ucesnikDaoSQL.getAll();
+
+        ucesnikDaoSQL.update(lista1.get(0));
+        ucesnikDaoSQL.update(lista1.get(1));
+        ucesnikDaoSQL.update(lista1.get(2));
+        ucesnikDaoSQL.update(lista1.get(3));
+        ucesnikDaoSQL.update(lista1.get(4));
+        ucesnikDaoSQL.update(lista1.get(5));
+        ucesnikDaoSQL.update(lista1.get(6));
+        ucesnikDaoSQL.update(lista1.get(7));
+
         List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
         Collections.sort(lista);
