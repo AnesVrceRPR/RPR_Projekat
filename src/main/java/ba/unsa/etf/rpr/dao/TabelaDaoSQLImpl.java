@@ -43,4 +43,33 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         }
         return null;
     }
+
+    @Override
+    public Tabela add(Tabela tabela) {
+        String insert = "INSERT INTO Tabela(Mjesto1,Mjesto2,Mjesto3,Mjesto4,Mjesto5,Mjesto6,Mjesto7,Mjesto8) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+
+            stmt.setString(1, tabela.getMjesto1());
+            stmt.setString(1, tabela.getMjesto2());
+            stmt.setString(1, tabela.getMjesto3());
+            stmt.setString(1, tabela.getMjesto4());
+            stmt.setString(1, tabela.getMjesto5());
+            stmt.setString(1, tabela.getMjesto6());
+            stmt.setString(1, tabela.getMjesto7());
+            stmt.setString(1, tabela.getMjesto8());
+
+            stmt.executeUpdate();
+
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next(); // we know that there is one key
+            tabela.setId(rs.getInt(1)); //set id to return it back
+
+            return tabela;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
