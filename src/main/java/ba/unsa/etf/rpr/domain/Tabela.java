@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.util.Objects;
+
 public class Tabela {
     private int id;
     private String mjesto1;
@@ -97,5 +99,8 @@ public class Tabela {
         return id == tabela.id;
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, mjesto1, mjesto2, mjesto3);
+    }
 }
