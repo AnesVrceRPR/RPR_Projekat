@@ -25,7 +25,6 @@ public class kontroler3 implements Initializable {
     public Label igrac8;
     public ListView tabela;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
@@ -49,6 +48,30 @@ public class kontroler3 implements Initializable {
     }
 
     public void azurirajTabelu(ActionEvent actionEvent) {
+
+
+
+
+
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista = ucesnikDaoSQL.getAll();
+
+        Collections.sort(lista);
+
+        Tabela tabela1 = new Tabela();
+        tabela1.setMjesto1(lista.get(0).getIme_i_Prezime());
+        tabela1.setMjesto2(lista.get(1).getIme_i_Prezime());
+        tabela1.setMjesto3(lista.get(2).getIme_i_Prezime());
+        tabela1.setMjesto4(lista.get(3).getIme_i_Prezime());
+        tabela1.setMjesto5(lista.get(4).getIme_i_Prezime());
+        tabela1.setMjesto6(lista.get(5).getIme_i_Prezime());
+        tabela1.setMjesto7(lista.get(6).getIme_i_Prezime());
+        tabela1.setMjesto8(lista.get(7).getIme_i_Prezime());
+
+        TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
+        tabelaDaoSQL.update(tabela1);
+
+        tabela.getItems().addAll(lista);
 
 
 
