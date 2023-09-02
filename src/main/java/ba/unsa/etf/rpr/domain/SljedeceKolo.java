@@ -1,8 +1,17 @@
 package ba.unsa.etf.rpr.domain;
 
 public class SljedeceKolo {
-    String igrac1;
-    String igrac2;
+    private int id;
+    private String igrac1;
+    private String igrac2;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getIgrac1() {
         return igrac1;
