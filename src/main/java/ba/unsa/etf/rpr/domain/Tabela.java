@@ -83,5 +83,8 @@ public class Tabela {
         this.mjesto8 = mjesto8;
     }
 
-
+    @Override
+    public String toString() {
+        return mjesto1;
+    }
 }
