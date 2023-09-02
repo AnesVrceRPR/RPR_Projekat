@@ -120,7 +120,13 @@ public class TabelaDaoSQLImpl implements TabelaDao {
                 Tabela tabela = new Tabela();
                 tabela.setId(rs.getInt("id"));
                 tabela.setMjesto1(rs.getString("Mjesto1"));
-                tabela.setMjesto1(rs.getString("Mjesto1"));
+                tabela.setMjesto1(rs.getString("Mjesto2"));
+                tabela.setMjesto1(rs.getString("Mjesto3"));
+                tabela.setMjesto1(rs.getString("Mjesto4"));
+                tabela.setMjesto1(rs.getString("Mjesto5"));
+                tabela.setMjesto1(rs.getString("Mjesto6"));
+                tabela.setMjesto1(rs.getString("Mjesto7"));
+                tabela.setMjesto1(rs.getString("Mjesto8"));
                 tabele.add(tabela);
             }
             rs.close();
