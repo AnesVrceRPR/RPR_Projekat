@@ -61,25 +61,30 @@ public class kontroler3 implements Initializable {
 
     public Ucesnik PronadjiIgraca(String ime)
     {
+        UcesnikDaoSQLImpl ucesnikDaoSQLImpl = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista = ucesnikDaoSQLImpl.getAll();
 
+        for(Ucesnik ucesnik : lista)
+        {
+            if(ucesnik.getIme_i_Prezime().equals(ime))
+            {
+                return ucesnik;
+            }
+        }
 
-
+        return new Ucesnik();
     }
 
 
     public void azurirajTabelu(ActionEvent actionEvent) {
 
-        if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 1)
+        if(Integer.parseInt(igr1.getText()) == 0 && Integer.parseInt(igr2.getText()) == 0)
         {
-
+            PronadjiIgraca(igr1.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr1.getText()).getBroj_Osvojenih_Bodova() + 0.5);
 
         }
 
-            if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 1)
-                if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 1)
-
-
-                    UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
         Collections.sort(lista);

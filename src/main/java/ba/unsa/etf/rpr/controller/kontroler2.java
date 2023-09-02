@@ -42,7 +42,7 @@ public class kontroler2 implements Initializable {
         Ucesnik ucesnik = new Ucesnik();
         ucesnik.setIme_i_Prezime(label1.getText());
         ucesnik.setRejting(Integer.parseInt(label2.getText()));
-        ucesnik.setBroj_Osvojenih_Bodova(0);
+        ucesnik.setBroj_Osvojenih_Bodova(0.);
 
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         ucesnikDaoSQL.add(ucesnik);

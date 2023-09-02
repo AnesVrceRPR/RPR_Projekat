@@ -6,7 +6,7 @@ public class Ucesnik implements Comparable<Ucesnik>{
     private int id;
     private String Ime_i_Prezime;
     private int Rejting;
-    private int Broj_Osvojenih_Bodova;
+    private Double Broj_Osvojenih_Bodova;
 
     public int getId() {
         return id;
@@ -30,11 +30,11 @@ public class Ucesnik implements Comparable<Ucesnik>{
         Rejting = rejting;
     }
 
-    public int getBroj_Osvojenih_Bodova() {
+    public Double getBroj_Osvojenih_Bodova() {
         return Broj_Osvojenih_Bodova;
     }
 
-    public void setBroj_Osvojenih_Bodova(int broj_Osvojenih_Bodova) {
+    public void setBroj_Osvojenih_Bodova(Double broj_Osvojenih_Bodova) {
         Broj_Osvojenih_Bodova = broj_Osvojenih_Bodova;
     }
 
@@ -59,6 +59,6 @@ public class Ucesnik implements Comparable<Ucesnik>{
 
     @Override
     public int compareTo(Ucesnik o) {
-        return o.Broj_Osvojenih_Bodova - this.Broj_Osvojenih_Bodova;
+        return (int)(o.Broj_Osvojenih_Bodova - this.Broj_Osvojenih_Bodova);
     }
 }

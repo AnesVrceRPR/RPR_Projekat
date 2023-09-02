@@ -49,7 +49,7 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
 
             stmt.setString(1, ucesnik.getIme_i_Prezime());
             stmt.setInt(2, ucesnik.getRejting());
-            stmt.setInt(3, ucesnik.getBroj_Osvojenih_Bodova());
+            stmt.setDouble(3, ucesnik.getBroj_Osvojenih_Bodova());
 
             stmt.executeUpdate();
 
@@ -104,7 +104,7 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
                 ucesnik.setId(rs.getInt("id"));
                 ucesnik.setIme_i_Prezime(rs.getString("Ime_i_Prezime"));
                 ucesnik.setRejting(rs.getInt("Rejting"));
-                ucesnik.setBroj_Osvojenih_Bodova(rs.getInt("Broj_Osvojenih_Bodova"));
+                ucesnik.setBroj_Osvojenih_Bodova(rs.getDouble("Broj_Osvojenih_Bodova"));
                 ucesnici.add(ucesnik);
             }
             rs.close();
