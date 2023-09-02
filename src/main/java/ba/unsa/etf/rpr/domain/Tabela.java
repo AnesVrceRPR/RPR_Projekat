@@ -86,9 +86,7 @@ public class Tabela {
     }
 
     @Override
-    public String toString() {
-        return mjesto1;
-    }
+    public String toString() {return mjesto1;}
 
     @Override
     public boolean equals(Object o) {

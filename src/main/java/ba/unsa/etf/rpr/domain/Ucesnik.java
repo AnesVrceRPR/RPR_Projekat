@@ -40,7 +40,7 @@ public class Ucesnik implements Comparable<Ucesnik>{
 
     @Override
     public String toString() {
-        return Ime_i_Prezime;
+        return Ime_i_Prezime + " " + Broj_Osvojenih_Bodova;
     }
 
     @Override

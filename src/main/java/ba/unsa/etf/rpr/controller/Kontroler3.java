@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -26,9 +27,11 @@ public class Kontroler3 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
-        Tabela tabela1 = tabelaDaoSQL.getById(0);
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
-        tabela.getItems().addAll(tabela1);
+        Collections.sort(lista);
+
+        tabela.getItems().addAll(lista);
     }
 }

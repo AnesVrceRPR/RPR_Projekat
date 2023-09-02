@@ -80,16 +80,16 @@ public class NoviKontroler implements Initializable {
 
         Tabela tabela = new Tabela();
         tabela.setMjesto1(lista.get(1).getIme_i_Prezime());
-        tabela.setMjesto1(lista.get(2).getIme_i_Prezime());
-        tabela.setMjesto1(lista.get(3).getIme_i_Prezime());
-        tabela.setMjesto1(lista.get(4).getIme_i_Prezime());
-        tabela.setMjesto1(lista.get(5).getIme_i_Prezime());
-        tabela.setMjesto1(lista.get(6).getIme_i_Prezime());
-        tabela.setMjesto1(lista.get(7).getIme_i_Prezime());
-        tabela.setMjesto1(lista.get(8).getIme_i_Prezime());
+        /*tabela.setMjesto2(lista.get(2).getIme_i_Prezime());
+        tabela.setMjesto3(lista.get(3).getIme_i_Prezime());
+        tabela.setMjesto4(lista.get(4).getIme_i_Prezime());
+        tabela.setMjesto5(lista.get(5).getIme_i_Prezime());
+        tabela.setMjesto6(lista.get(6).getIme_i_Prezime());
+        tabela.setMjesto7(lista.get(7).getIme_i_Prezime());
+        tabela.setMjesto8(lista.get(8).getIme_i_Prezime());*/
 
         TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
-        tabelaDaoSQL.update(tabela);
+        //tabelaDaoSQL.update(tabela);
 
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor3.fxml"));
