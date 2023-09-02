@@ -120,7 +120,19 @@ public class kontroler3 implements Initializable {
             PronadjiIgraca(igr6.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr6.getText()).getBroj_Osvojenih_Bodova() + 1);
         }
 
-
+        if(Integer.parseInt(igr7.getText()) == 0 && Integer.parseInt(igr8.getText()) == 0)
+        {
+            PronadjiIgraca(igr7.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr7.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            PronadjiIgraca(igr8.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr8.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+        }
+        if(Integer.parseInt(igr7.getText()) == 1 && Integer.parseInt(igr8.getText()) == 0)
+        {
+            PronadjiIgraca(igr7.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr7.getText()).getBroj_Osvojenih_Bodova() + 1);
+        }
+        if(Integer.parseInt(igr7.getText()) == 0 && Integer.parseInt(igr8.getText()) == 1)
+        {
+            PronadjiIgraca(igr8.getText()).setBroj_Osvojenih_Bodova(PronadjiIgraca(igr8.getText()).getBroj_Osvojenih_Bodova() + 1);
+        }
 
 
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
