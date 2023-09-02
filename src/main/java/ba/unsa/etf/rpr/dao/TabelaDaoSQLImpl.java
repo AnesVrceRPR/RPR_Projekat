@@ -14,9 +14,4 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         }
     }
 
-
-
-
-
-
 }
