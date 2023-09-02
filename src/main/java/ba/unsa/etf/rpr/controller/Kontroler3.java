@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.controller;
 
+import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -24,8 +26,9 @@ public class Kontroler3 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
+        Tabela tabela1 = tabelaDaoSQL.getById(0);
 
-
-
+        tabela.getItems().addAll(tabela1);
     }
 }

@@ -59,7 +59,6 @@ public class Ucesnik implements Comparable<Ucesnik>{
 
     @Override
     public int compareTo(Ucesnik o) {
-        if(this.Broj_Osvojenih_Bodova > o.getBroj_Osvojenih_Bodova()) return 1;
-        return 0;
+        return o.Broj_Osvojenih_Bodova - this.Broj_Osvojenih_Bodova;
     }
 }

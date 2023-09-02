@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controller;
 
+import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
@@ -42,6 +43,7 @@ public class NoviKontroler implements Initializable {
         Ucesnik ucesnik = new Ucesnik();
         ucesnik.setIme_i_Prezime(label1.getText());
         ucesnik.setRejting(Integer.parseInt(label2.getText()));
+        ucesnik.setBroj_Osvojenih_Bodova(0);
 
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         ucesnikDaoSQL.add(ucesnik);
@@ -74,20 +76,20 @@ public class NoviKontroler implements Initializable {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
-        for(Ucesnik ucesnik : lista)
-        {
-            System.out.println(ucesnik.getIme_i_Prezime() + "  " + ucesnik.getBroj_Osvojenih_Bodova());
-        }
-
         Collections.sort(lista);
 
-        /*for(Ucesnik ucesnik : lista)
-        {
-            System.out.println(ucesnik.getIme_i_Prezime());
-        }*/
+        Tabela tabela = new Tabela();
+        tabela.setMjesto1(lista.get(1).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(2).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(3).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(4).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(5).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(6).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(7).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(8).getIme_i_Prezime());
 
-        //Tabela tabela = new Tabela();
-
+        TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
+        tabelaDaoSQL.update(tabela);
 
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor3.fxml"));
