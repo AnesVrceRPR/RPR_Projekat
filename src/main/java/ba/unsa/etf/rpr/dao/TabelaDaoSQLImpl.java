@@ -79,9 +79,14 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         try{
             PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
             stmt.setObject(1, tabela.getMjesto1());
-            stmt.setObject(1, tabela.getMjesto1());
-            stmt.setObject(1, tabela.getMjesto1());
-            stmt.setObject(2, tabela.getId());
+            stmt.setObject(2, tabela.getMjesto2());
+            stmt.setObject(3, tabela.getMjesto3());
+            stmt.setObject(4, tabela.getMjesto4());
+            stmt.setObject(5, tabela.getMjesto5());
+            stmt.setObject(6, tabela.getMjesto6());
+            stmt.setObject(7, tabela.getMjesto7());
+            stmt.setObject(8, tabela.getMjesto8());
+            stmt.setObject(9, tabela.getId());
             stmt.executeUpdate();
             return tabela;
         }
@@ -90,4 +95,6 @@ public class TabelaDaoSQLImpl implements TabelaDao {
             return null;
         }
     }
+
+
 }
