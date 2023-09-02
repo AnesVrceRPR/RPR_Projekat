@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.awt.font.ImageGraphicAttribute;
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
@@ -57,6 +58,14 @@ public class kontroler3 implements Initializable {
 
         tabela.getItems().addAll(lista);
     }
+
+    public Ucesnik PronadjiIgraca(String ime)
+    {
+
+
+
+    }
+
 
     public void azurirajTabelu(ActionEvent actionEvent) {
 
