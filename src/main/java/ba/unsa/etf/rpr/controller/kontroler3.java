@@ -190,4 +190,7 @@ public class kontroler3 implements Initializable {
 
         tabela.getItems().addAll(lista);
     }
+
+    public void SljedeceKolo(ActionEvent actionEvent) {
+    }
 }
