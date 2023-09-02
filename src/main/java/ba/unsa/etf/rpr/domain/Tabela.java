@@ -66,4 +66,20 @@ public class Tabela {
     public void setMjesto4(String mjesto4) {
         this.mjesto4 = mjesto4;
     }
+
+    public void setMjesto5(String mjesto5) {
+        this.mjesto5 = mjesto5;
+    }
+
+    public void setMjesto6(String mjesto6) {
+        this.mjesto6 = mjesto6;
+    }
+
+    public void setMjesto7(String mjesto7) {
+        this.mjesto7 = mjesto7;
+    }
+
+    public void setMjesto8(String mjesto8) {
+        this.mjesto8 = mjesto8;
+    }
 }
