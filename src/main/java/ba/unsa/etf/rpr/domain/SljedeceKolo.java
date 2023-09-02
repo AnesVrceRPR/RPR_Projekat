@@ -34,6 +34,13 @@ public class SljedeceKolo {
         return igrac1  + " " + igrac2;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        SljedeceKolo sljedeceKolo = (SljedeceKolo) o;
+        return id == sljedeceKolo.id;
+    }
 
 }
