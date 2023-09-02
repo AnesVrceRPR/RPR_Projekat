@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface TabelaDao {
+import ba.unsa.etf.rpr.domain.Tabela;
+
+public interface TabelaDao extends Dao<Tabela>{
 }
