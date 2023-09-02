@@ -3,6 +3,8 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.Tabela;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TabelaDaoSQLImpl implements TabelaDao {
     private Connection connection;
@@ -105,5 +107,27 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         }catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public List<Tabela> getAll() {
+        String query = "SELECT * FROM Tabela";
+        List<Tabela> tabele = new ArrayList<Tabela>();
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){ // result set is iterator.
+                Tabela tabela = new Tabela();
+                tabela.setId(rs.getInt("id"));
+                tabela.setMjesto1(rs.getString("Mjesto1"));
+                tabela.setMjesto1(rs.getString("Mjesto1"));
+                tabele.add(tabela);
+            }
+            rs.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace(); // poor error handling
+        }
+        return tabele;
     }
 }
