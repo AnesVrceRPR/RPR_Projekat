@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.util.Objects;
+
 public class SljedeceKolo {
     private int id;
     private String igrac1;
@@ -42,5 +44,8 @@ public class SljedeceKolo {
         SljedeceKolo sljedeceKolo = (SljedeceKolo) o;
         return id == sljedeceKolo.id;
     }
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, igrac1, igrac2);
+    }
 }
