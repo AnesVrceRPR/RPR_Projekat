@@ -40,8 +40,7 @@ public class Ucesnik {
 
     @Override
     public String toString() {
-        return "id = " + id + ", Ime i Prezime: " + Ime_i_Prezime + ", Rejting: " + Rejting +
-                ", Broj osvojenih bodova: " + Broj_Osvojenih_Bodova;
+        return Ime_i_Prezime;
     }
 
     @Override

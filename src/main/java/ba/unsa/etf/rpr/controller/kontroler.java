@@ -19,7 +19,7 @@ public class kontroler {
 
     public void buttonclick(ActionEvent actionEvent) throws IOException {
 
-        if(ime.getText().equals("anes") && lozinka.getText().equals("1234"))
+        if(!ime.getText().equals("anes") || !lozinka.getText().equals("1234"))
         {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/NoviProzor.fxml"));
