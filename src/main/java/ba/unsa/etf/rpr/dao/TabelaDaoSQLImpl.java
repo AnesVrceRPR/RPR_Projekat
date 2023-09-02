@@ -31,10 +31,10 @@ public class TabelaDaoSQLImpl implements TabelaDao {
                 tabela.setMjesto2(rs.getString("Mjesto2"));
                 tabela.setMjesto3(rs.getString("Mjesto3"));
                 tabela.setMjesto4(rs.getString("Mjesto4"));
-                tabela.setMjesto1(rs.getString("Mjesto5"));
-                tabela.setMjesto1(rs.getString("Mjesto6"));
-                tabela.setMjesto1(rs.getString("Mjesto7"));
-                tabela.setMjesto1(rs.getString("Mjesto8"));
+                tabela.setMjesto5(rs.getString("Mjesto5"));
+                tabela.setMjesto6(rs.getString("Mjesto6"));
+                tabela.setMjesto7(rs.getString("Mjesto7"));
+                tabela.setMjesto8(rs.getString("Mjesto8"));
                 rs.close();
                 return tabela;
             } else {

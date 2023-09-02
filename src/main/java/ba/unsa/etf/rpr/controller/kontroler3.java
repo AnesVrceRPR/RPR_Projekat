@@ -71,9 +71,16 @@ public class kontroler3 implements Initializable {
         TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
         tabelaDaoSQL.update(tabela1);
 
+        tabela.getItems().removeAll(lista);
         tabela.getItems().addAll(lista);
 
-
-
+        igrac1.setText(tabela1.getMjesto1());
+        igrac2.setText(tabela1.getMjesto2());
+        igrac3.setText(tabela1.getMjesto3());
+        igrac4.setText(tabela1.getMjesto4());
+        igrac5.setText(tabela1.getMjesto5());
+        igrac6.setText(tabela1.getMjesto6());
+        igrac7.setText(tabela1.getMjesto7());
+        igrac8.setText(tabela1.getMjesto8());
     }
 }
