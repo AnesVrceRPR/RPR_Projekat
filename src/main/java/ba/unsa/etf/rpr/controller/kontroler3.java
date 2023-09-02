@@ -60,11 +60,17 @@ public class kontroler3 implements Initializable {
 
     public void azurirajTabelu(ActionEvent actionEvent) {
 
+        if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 1)
+        {
 
 
+        }
+
+            if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 1)
+                if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 1)
 
 
-        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+                    UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
         Collections.sort(lista);
