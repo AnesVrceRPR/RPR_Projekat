@@ -1,8 +1,6 @@
 package ba.unsa.etf.rpr.controller;
 
-import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
-import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -13,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Kontroler3 implements Initializable {
+public class kontroler3 implements Initializable {
     public Label igrac3;
     public Label igrac1;
     public Label igrac5;

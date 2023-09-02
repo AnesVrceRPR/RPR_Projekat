@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
-public class kontroler {
+public class kontroler1 {
     public TextField ime;
     public PasswordField lozinka;
 
@@ -22,7 +22,7 @@ public class kontroler {
         if(!ime.getText().equals("anes") || !lozinka.getText().equals("1234"))
         {
             Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/NoviProzor.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor2.fxml"));
             stage.setTitle("Novi prozor");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.show();
