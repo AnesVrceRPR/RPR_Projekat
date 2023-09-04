@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
-public class kontroler1 {
+public class Kontroler1 {
     public TextField ime;
     public PasswordField lozinka;
 

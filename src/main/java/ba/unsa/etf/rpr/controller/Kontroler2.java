@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
-public class kontroler2 implements Initializable {
+public class Kontroler2 implements Initializable {
     public ListView ListaImena;
 
     public Button PotvrdiDodavanje;

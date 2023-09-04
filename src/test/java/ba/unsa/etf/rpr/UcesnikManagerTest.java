@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import ba.unsa.etf.rpr.business.UcesnikManager;
+import ba.unsa.etf.rpr.controller.Kontroler3;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import org.junit.Test;
 
@@ -9,28 +10,33 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UcesnikManagerTest {
 
     @Test
-    public void rejtingManjiOd0Test1()
-    {
+    public void rejtingManjiOd0Test1() {
         Ucesnik ucesnik = new Ucesnik();
         ucesnik.setImeIPrezime("anes");
         ucesnik.setRejting(-2);
         ucesnik.setBrojOsvojenihBodova(2.);
 
         UcesnikManager ucesnikManager = new UcesnikManager();
-        Exception e = assertThrows(RuntimeException.class, ()-> ucesnikManager.add(ucesnik));
+        Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.add(ucesnik));
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
     }
 
     @Test
-    public void rejtingManjiOd0Test2()
-    {
+    public void rejtingManjiOd0Test2() {
         Ucesnik ucesnik = new Ucesnik();
         ucesnik.setImeIPrezime("anes");
         ucesnik.setRejting(-2);
         ucesnik.setBrojOsvojenihBodova(2.);
 
         UcesnikManager ucesnikManager = new UcesnikManager();
-        Exception e = assertThrows(RuntimeException.class, ()-> ucesnikManager.update(ucesnik));
+        Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.update(ucesnik));
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
     }
+
+    @Test
+    public void ProvjeriUnosRezultata(String s)
+    {
+
+    }
+
 }

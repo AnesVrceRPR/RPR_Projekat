@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class kontroler4 implements Initializable {
+public class Kontroler4 implements Initializable {
 
     public ListView ListaSvihKola;
     @Override

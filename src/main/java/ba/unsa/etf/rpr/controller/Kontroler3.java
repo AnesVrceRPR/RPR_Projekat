@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
-public class kontroler3 implements Initializable {
+public class Kontroler3 implements Initializable {
     public Label igrac3;
     public Label igrac1;
     public Label igrac5;
@@ -85,26 +85,11 @@ public class kontroler3 implements Initializable {
         return new Ucesnik();
     }
 
-    public void provjeriRezultate()
+    public void provjeriRezultate(String s)
     {
         try{
-            Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr2.getText());
-            Double.parseDouble(igr3.getText());
-            Double.parseDouble(igr4.getText());
-            Double.parseDouble(igr5.getText());
-            Double.parseDouble(igr6.getText());
-            Double.parseDouble(igr7.getText());
-            Double.parseDouble(igr8.getText());
-
-            if(Double.parseDouble(igr1.getText())!= 0 && Double.parseDouble(igr1.getText())!= 1) throw new Exception();
-            if(Double.parseDouble(igr2.getText())!= 0 && Double.parseDouble(igr2.getText())!= 1) throw new Exception();
-            if(Double.parseDouble(igr3.getText())!= 0 && Double.parseDouble(igr3.getText())!= 1) throw new Exception();
-            if(Double.parseDouble(igr4.getText())!= 0 && Double.parseDouble(igr4.getText())!= 1) throw new Exception();
-            if(Double.parseDouble(igr5.getText())!= 0 && Double.parseDouble(igr5.getText())!= 1) throw new Exception();
-            if(Double.parseDouble(igr6.getText())!= 0 && Double.parseDouble(igr6.getText())!= 1) throw new Exception();
-            if(Double.parseDouble(igr7.getText())!= 0 && Double.parseDouble(igr7.getText())!= 1) throw new Exception();
-            if(Double.parseDouble(igr8.getText())!= 0 && Double.parseDouble(igr8.getText())!= 1) throw new Exception();
+            Double.parseDouble(s);
+            if(Double.parseDouble(s)!= 0 && Double.parseDouble(s)!= 1) throw new Exception();
         }catch(Exception e)
         {
             throw new unosNijeIspravan("Potrebno je unijeti 0 ili 1");
