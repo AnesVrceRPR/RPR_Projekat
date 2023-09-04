@@ -43,27 +43,22 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
     }
 
     @Override
-    public Tabela add(Tabela tabela) {
-        String insert = "INSERT INTO Tabela(Mjesto1,Mjesto2,Mjesto3,Mjesto4,Mjesto5,Mjesto6,Mjesto7,Mjesto8) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+    public OdigranaKola add(OdigranaKola odigranaKola) {
+        String insert = "INSERT INTO OdigranaKola(Bodovi1,Igrac1,Igrac2,Bodovi2) VALUES(?, ?, ?, ?)";
         try{
             PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
-            stmt.setString(1, tabela.getMjesto1());
-            stmt.setString(2, tabela.getMjesto2());
-            stmt.setString(3, tabela.getMjesto3());
-            stmt.setString(4, tabela.getMjesto4());
-            stmt.setString(5, tabela.getMjesto5());
-            stmt.setString(6, tabela.getMjesto6());
-            stmt.setString(7, tabela.getMjesto7());
-            stmt.setString(8, tabela.getMjesto8());
-
+            stmt.setDouble(1, odigranaKola.getIgr1());
+            stmt.setString(2, odigranaKola.getIgrac1());ž
+            stmt.setString(3, odigranaKola.getIgrac2());
+            stmt.setDouble(4, odigranaKola.getIgr2());
             stmt.executeUpdate();
 
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next(); // we know that there is one key
-            tabela.setId(rs.getInt(1)); //set id to return it back
+            odigranaKola.setId(rs.getInt(1)); //set id to return it back
 
-            return tabela;
+            return odigranaKola;
         }
         catch (SQLException e){
             e.printStackTrace();
