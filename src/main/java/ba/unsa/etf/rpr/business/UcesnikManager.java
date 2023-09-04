@@ -1,13 +1,17 @@
 package ba.unsa.etf.rpr.business;
 
 import ba.unsa.etf.rpr.Exception.unosNijeIspravan;
+import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.Ucesnik;
 
 public class UcesnikManager {
-
-    public void spravanRejting(int rejting)
+    public Ucesnik add(Ucesnik ucesnik)
     {
-        if(rejting < 0) throw new unosNijeIspravan("Rejting ne može biti manji od 0");
+        if(ucesnik.getRejting() <0 ) throw new unosNijeIspravan("Rejting ne može biti manji od 0");
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        return ucesnikDaoSQL.add(ucesnik);
     }
+
 
 
 
