@@ -31,11 +31,11 @@ public class UcesnikManager {
 
         for(Ucesnik ucesnik : lista)
         {
-            if(ucesnik
+            if(ucesnik.getId() == id) brojac = true;
         }
 
+        if(brojac == false) throw new unosNijeIspravan("Korisnik ne postoji");
 
-
-
+        ucesnikDaoSQL.delete(id);
     }
 }
