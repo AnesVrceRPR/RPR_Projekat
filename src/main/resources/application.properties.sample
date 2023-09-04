@@ -1,3 +1,3 @@
-db.connection_string=jdbc:mysql://localhost:3306/databaseName?sessionVariables=WAIT_TIMEOUT=28800
-db.username=root
-db.password=root
+db.connection_string=jdbc:mysql://sql.freedb.tech:3306/freedb_RPRbaza1
+db.username=freedb_avrce1
+db.password=sUf2N#3?An58!@h
