@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface OdigranaKolaDao {
+import ba.unsa.etf.rpr.domain.OdigranaKola;
+
+public interface OdigranaKolaDao extends Dao<OdigranaKola>{
 }
