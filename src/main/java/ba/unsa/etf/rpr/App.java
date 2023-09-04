@@ -13,22 +13,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        /*Ucesnik ucesnik = new Ucesnik();
-        ucesnik.setIme_i_Prezime("anes");
-        ucesnik.setId(3);
-        ucesnik.setRejting(1900);
-        ucesnik.setBroj_Osvojenih_Bodova(0);
+        //UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        System.out.println("unesi ime i rejting: ");
+        String izraz = new String(args[0]);
+        Integer rejting = Integer.parseInt(args[1]);
 
-        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
-        ucesnikDaoSQL.update(ucesnik);*/
-
-       /* UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
-        List<Ucesnik> lista = ucesnikDaoSQL.getAll();
-
-        for(Ucesnik ucesnik : lista)
-        {
-            System.out.println(ucesnik.getImeIPrezime());
-        }*/
+        Ucesnik ucesnik = new Ucesnik();
+        ucesnik.setBrojOsvojenihBodova(0.);
+        ucesnik.setImeIPrezime(izraz);
 
     }
 }
