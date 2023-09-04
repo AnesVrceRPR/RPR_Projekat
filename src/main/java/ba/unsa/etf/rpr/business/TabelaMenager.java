@@ -29,9 +29,19 @@ public class TabelaMenager {
 
     public void delete(int id)
     {
+        TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
+        List<Tabela> tabele = tabelaDaoSQL.getAll();
 
+        boolean brojac = false;
+
+        for(Tabela tabela: tabele)
+        {
+            if(tabela.getId() == id) brojac = true;
+        }
+
+        if(brojac == false) throw new unosNijeIspravan("Tabela ne postoji");
+
+        tabelaDaoSQL.delete();
     }
-
-
 
 }
