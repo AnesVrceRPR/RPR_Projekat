@@ -23,6 +23,11 @@ import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+
+/**
+ * kontroler za 2. prozor
+ */
+
 public class Kontroler2 implements Initializable {
     public ListView ListaImena;
 
@@ -33,11 +38,21 @@ public class Kontroler2 implements Initializable {
     public TextField label3;
     public Button Nastavi;
 
+
+    /**
+     * početno popunjavanje tabele ucesnika
+     */
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         ListaImena.getItems().addAll(ucesnikDaoSQL.getAll());
     }
+
+    /**
+     * metoda koja se poziva kad se kad se pritisne dugme za potvrdu za dodavanje igraca
+     * dodaje igraca sa odgovarajucim imenom i rejtingom u bazu
+     */
 
     public void dodajIgraca(ActionEvent actionEvent) {
         Ucesnik ucesnik = new Ucesnik();
@@ -50,6 +65,11 @@ public class Kontroler2 implements Initializable {
 
         ListaImena.getItems().add(ucesnik);
     }
+
+    /**
+     * metoda koja se poziva kad se kad se pritisne dugme za potvrdu brisanja ucesnika
+     * brise igraca iz baze
+     */
 
     public void obrisiIgraca(ActionEvent actionEvent) {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
@@ -73,6 +93,9 @@ public class Kontroler2 implements Initializable {
         ListaImena.getItems().remove(obrisani);
     }
 
+    /**
+     * Otvara 3. prozor (glavni prozor)
+     */
     public void OtvoriNoviProzor(ActionEvent actionEvent) throws IOException {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         List<Ucesnik> lista = ucesnikDaoSQL.getAll();
