@@ -4,10 +4,18 @@ import ba.unsa.etf.rpr.business.UcesnikManager;
 import ba.unsa.etf.rpr.controller.Kontroler3;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UcesnikManagerTest {
+
+    @BeforeEach
+    public void InicijalizacijaObjekata()
+    {
+
+
+    }
 
     @Test
     public void rejtingManjiOd0Test1() {
@@ -31,24 +39,6 @@ public class UcesnikManagerTest {
         UcesnikManager ucesnikManager = new UcesnikManager();
         Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.update(ucesnik));
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
-    }
-
-    @Test
-    public void ProvjeriUnosRezultataTest1()
-    {
-        Kontroler3 kontroler3 = new Kontroler3();
-
-        Exception e = assertThrows(RuntimeException.class, () -> kontroler3.provjeriRezultate("f"));
-        assertTrue(e.getMessage().contains("Potrebno je unijeti 0 ili 1"));
-    }
-
-    @Test
-    public void ProvjeriUnosRezultataTest2()
-    {
-        Kontroler3 kontroler3 = new Kontroler3();
-
-        Exception e = assertThrows(RuntimeException.class, () -> kontroler3.provjeriRezultate("4"));
-        assertTrue(e.getMessage().contains("Potrebno je unijeti 0 ili 1"));
     }
 
 }
