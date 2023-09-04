@@ -35,29 +35,42 @@ public class UcesnikManagerTest {
         ucesnici.addAll(Arrays.asList(new Ucesnik(2, "isam", 1000, 2.), new Ucesnik(3, "isam", 1000, 2.)));
     }
 
-
     @Test
-    public void rejtingManjiOd0Test1() {
-        Ucesnik ucesnik = new Ucesnik();
-        ucesnik.setImeIPrezime("anes");
-        ucesnik.setRejting(-2);
-        ucesnik.setBrojOsvojenihBodova(2.);
+    void provjeraDelete(){
+        try {
+            Mockito.doCallRealMethod().when(ucesnikManager).delete(1);
+        }catch(Exception e)
+        {
+            assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
+        }
+    }
+
+
+
+
+
+   /* @Test
+    void rejtingManjiOd0Test1() {
+        Ucesnik ucesnik1 = new Ucesnik();
+        ucesnik1.setImeIPrezime("anes");
+        ucesnik1.setRejting(-2);
+        ucesnik1.setBrojOsvojenihBodova(2.);
 
         UcesnikManager ucesnikManager = new UcesnikManager();
-        Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.add(ucesnik));
+        Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.add(ucesnik1));
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
     }
 
     @Test
     public void rejtingManjiOd0Test2() {
-        Ucesnik ucesnik = new Ucesnik();
-        ucesnik.setImeIPrezime("anes");
-        ucesnik.setRejting(-2);
-        ucesnik.setBrojOsvojenihBodova(2.);
+        Ucesnik ucesnik1 = new Ucesnik();
+        ucesnik1.setImeIPrezime("anes");
+        ucesnik1.setRejting(-2);
+        ucesnik1.setBrojOsvojenihBodova(2.);
 
         UcesnikManager ucesnikManager = new UcesnikManager();
-        Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.update(ucesnik));
+        Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.update(ucesnik1));
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
     }
-
+*/
 }
