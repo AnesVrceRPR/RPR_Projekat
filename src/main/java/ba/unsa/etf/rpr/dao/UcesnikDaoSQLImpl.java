@@ -73,12 +73,13 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
 
     @Override
     public Ucesnik update(Ucesnik ucesnik) {
-        String update = "UPDATE Ucesnik SET Ime_i_Prezime = ?, Broj_Osvojenih_Bodova = ? WHERE id = ?";
+        String update = "UPDATE Ucesnik SET Ime_i_Prezime = ?, Rejting = ?, Broj_Osvojenih_Bodova = ? WHERE id = ?";
         try{
             PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
             stmt.setObject(1, ucesnik.getImeIPrezime());
-            stmt.setObject(2, ucesnik.getBrojOsvojenihBodova());
-            stmt.setObject(3, ucesnik.getId());
+            stmt.setObject(2, ucesnik.getRejting());
+            stmt.setObject(3, ucesnik.getBrojOsvojenihBodova());
+            stmt.setObject(4, ucesnik.getId());
             stmt.executeUpdate();
             return ucesnik;
         }
