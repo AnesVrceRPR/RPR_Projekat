@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controller;
 
+import ba.unsa.etf.rpr.Exception.NijeUnesenBrojException;
 import ba.unsa.etf.rpr.dao.OdigranaKolaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
@@ -82,6 +83,25 @@ public class kontroler3 implements Initializable {
 
         return new Ucesnik();
     }
+
+    public void provjeriRezultate()
+    {
+        try{
+            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr1.getText());
+        }catch(Exception e)
+        {
+            throw new NijeUnesenBrojException("nije unesen broj");
+        }
+    }
+
+
 
     public void azurirajTabelu(ActionEvent actionEvent) {
 
