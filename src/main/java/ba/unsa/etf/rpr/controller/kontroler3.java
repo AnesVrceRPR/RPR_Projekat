@@ -149,11 +149,13 @@ public class kontroler3 implements Initializable {
         {
             ucesnik3 = PronadjiIgraca(igrac3.getText());
             ucesnik3.setBrojOsvojenihBodova(PronadjiIgraca(igrac3.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik3.setRejting(ucesnik3.getRejting() + 8);
         }
         if(Integer.parseInt(igr3.getText()) == 0 && Integer.parseInt(igr4.getText()) == 1)
         {
             ucesnik4 = PronadjiIgraca(igrac4.getText());
             ucesnik4.setBrojOsvojenihBodova(PronadjiIgraca(igrac4.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik4.setRejting(ucesnik4.getRejting() + 8);
         }
 
         if(Integer.parseInt(igr5.getText()) == 0 && Integer.parseInt(igr6.getText()) == 0)
@@ -167,11 +169,13 @@ public class kontroler3 implements Initializable {
         {
             ucesnik5 = PronadjiIgraca(igrac5.getText());
             ucesnik5.setBrojOsvojenihBodova(PronadjiIgraca(igrac5.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik5.setRejting(ucesnik5.getRejting() + 8);
         }
         if(Integer.parseInt(igr5.getText()) == 0 && Integer.parseInt(igr6.getText()) == 1)
         {
             ucesnik6 = PronadjiIgraca(igrac6.getText());
             ucesnik6.setBrojOsvojenihBodova(PronadjiIgraca(igrac6.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik6.setRejting(ucesnik6.getRejting() + 8);
         }
 
         if(Integer.parseInt(igr7.getText()) == 0 && Integer.parseInt(igr8.getText()) == 0)
@@ -185,11 +189,13 @@ public class kontroler3 implements Initializable {
         {
             ucesnik7 = PronadjiIgraca(igrac7.getText());
             ucesnik7.setBrojOsvojenihBodova(PronadjiIgraca(igrac7.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik7.setRejting(ucesnik7.getRejting() + 8);
         }
         if(Integer.parseInt(igr7.getText()) == 0 && Integer.parseInt(igr8.getText()) == 1)
         {
             ucesnik8 = PronadjiIgraca(igrac8.getText());
             ucesnik8.setBrojOsvojenihBodova(PronadjiIgraca(igrac8.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik8.setRejting(ucesnik8.getRejting() + 8);
         }
 
         ucesnikDaoSQLImpl.update(ucesnik1);
