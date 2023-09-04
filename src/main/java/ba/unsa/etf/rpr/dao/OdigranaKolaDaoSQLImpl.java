@@ -51,7 +51,7 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
             PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
             stmt.setDouble(1, odigranaKola.getIgr1());
-            stmt.setString(2, odigranaKola.getIgrac1());ž
+            stmt.setString(2, odigranaKola.getIgrac1());
             stmt.setString(3, odigranaKola.getIgrac2());
             stmt.setDouble(4, odigranaKola.getIgr2());
             stmt.executeUpdate();
@@ -74,7 +74,7 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         try{
             PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
             stmt.setObject(1, odigranaKola.getIgr1());
-            stmt.setObject(2, odigranaKola.getIgrac1()1());
+            stmt.setObject(2, odigranaKola.getIgrac1());
             stmt.setObject(3, odigranaKola.getIgrac2());
             stmt.setObject(4, odigranaKola.getIgr2());
             stmt.setObject(5, odigranaKola.getId());

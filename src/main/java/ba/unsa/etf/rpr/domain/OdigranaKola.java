@@ -64,6 +64,6 @@ public class OdigranaKola {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, igrac1, igrac2);
+        return Objects.hash(id, igr1 , igrac1, igrac2, igr2);
     }
 }
