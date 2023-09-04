@@ -21,6 +21,10 @@ public class OdigranaKola {
         this.igr1 = igr1;
     }
 
+    public void setIgr2(Double igr2) {
+        this.igr2 = igr2;
+    }
+
     public int getId() {
         return id;
     }
