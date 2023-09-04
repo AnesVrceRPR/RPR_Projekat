@@ -4,8 +4,14 @@ import java.util.Objects;
 
 public class OdigranaKola {
     private int id;
+    private Double igr1;
     private String igrac1;
     private String igrac2;
+    private Double igr2;
+
+    public Double getIgr1() {
+        return igr1;
+    }
 
     public int getId() {
         return id;
