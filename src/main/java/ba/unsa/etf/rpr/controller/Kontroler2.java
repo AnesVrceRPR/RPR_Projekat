@@ -120,6 +120,5 @@ public class Kontroler2 implements Initializable {
         stage.setTitle("Dobrodošli");
         stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.show();
-
     }
 }

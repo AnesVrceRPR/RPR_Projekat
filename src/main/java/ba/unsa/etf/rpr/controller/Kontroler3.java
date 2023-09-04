@@ -27,6 +27,10 @@ import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * kontroler za 3. prozor
+ */
+
 public class Kontroler3 implements Initializable {
     public Label igrac3;
     public Label igrac1;
@@ -47,6 +51,10 @@ public class Kontroler3 implements Initializable {
     public TextField igr5;
     public TextField igr7;
 
+
+    /**
+     * početno popunjavanje kola
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
@@ -69,6 +77,12 @@ public class Kontroler3 implements Initializable {
         tabela.getItems().addAll(lista);
     }
 
+    /**
+     * metoda za pronalazak id-a od igraca sa
+     * @param ime - ime ucesnika čiji se id traži
+     * @return Ucesnik
+     */
+
     public Ucesnik PronadjiIgraca(String ime)
     {
         UcesnikDaoSQLImpl ucesnikDaoSQLImpl = new UcesnikDaoSQLImpl();
@@ -85,6 +99,11 @@ public class Kontroler3 implements Initializable {
         return new Ucesnik();
     }
 
+    /**
+     * metoda za provjeru ispravnosti unosa za rezultat
+     * baca izuzetak tipa unosNijeIspravan ako uneseni podaci nisu mogući
+     */
+
     public void provjeriRezultate(String s)
     {
         try{
@@ -95,6 +114,11 @@ public class Kontroler3 implements Initializable {
             throw new unosNijeIspravan("Potrebno je unijeti 0 ili 1");
         }
     }
+
+    /**
+     * metoda koja se poziva kad se kad se pritisne dugme za potvrdu rezultat svih odigranih kola
+     * ažurira tabelu (sortira je broju bodova)
+     */
 
     public void azurirajTabelu(ActionEvent actionEvent) {
 
@@ -251,6 +275,11 @@ public class Kontroler3 implements Initializable {
         odigranaKolaDaoSQL.add(kolo4);
     }
 
+    /**
+     * metoda koja se poziva kad se kad se pritisne dugme za ispis sljedeceg kola
+     * raspoređuje 8 igraca u 4 meča
+     */
+
     public void SljedeceKolo(ActionEvent actionEvent) {
         TabelaMenager tabelaMenager = new TabelaMenager();
         Tabela tabela1 = tabelaMenager.getById(0);
@@ -264,6 +293,11 @@ public class Kontroler3 implements Initializable {
         igrac7.setText(tabela1.getMjesto7());
         igrac8.setText(tabela1.getMjesto8());
     }
+
+    /**
+     * metoda koja se poziva kad se kad se pritisne dugme za prikaz svih kola
+     * otvara novi prozor
+     */
 
     public void prikaziOdigranaKola(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
