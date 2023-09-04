@@ -13,6 +13,10 @@ public class OdigranaKola {
         return igr1;
     }
 
+    public Double getIgr2() {
+        return igr2;
+    }
+
     public int getId() {
         return id;
     }
