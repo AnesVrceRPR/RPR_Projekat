@@ -3,6 +3,13 @@ package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * JavaBeans klasa, sadrži gettere i settere za sve privatne atribute
+ * konstruktor sa i bez parametara
+ * toSTring, hashCodei equals
+ */
+
+
 public class OdigranaKola implements Serializable {
     private int id;
     private Double igr1;
