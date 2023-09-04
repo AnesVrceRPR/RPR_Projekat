@@ -13,6 +13,18 @@ public class Tabela {
     private String mjesto7;
     private String mjesto8;
 
+    public Tabela(int id, String mjesto1, String mjesto2, String mjesto3, String mjesto4, String mjesto5, String mjesto6, String mjesto7, String mjesto8) {
+        this.id = id;
+        this.mjesto1 = mjesto1;
+        this.mjesto2 = mjesto2;
+        this.mjesto3 = mjesto3;
+        this.mjesto4 = mjesto4;
+        this.mjesto5 = mjesto5;
+        this.mjesto6 = mjesto6;
+        this.mjesto7 = mjesto7;
+        this.mjesto8 = mjesto8;
+    }
+
     public String getMjesto1() {
         return mjesto1;
     }
