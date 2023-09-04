@@ -14,7 +14,7 @@
     <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ListView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+      <ListView fx:id="ListaSvihKola" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2" />
       <Label alignment="CENTER" prefHeight="81.0" prefWidth="288.0" text="Sva odigrana kola na turniru:">
          <font>
             <Font size="21.0" />
