@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.controller;
 
 import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
+import ba.unsa.etf.rpr.domain.OdigranaKola;
 import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.event.ActionEvent;
@@ -189,6 +190,31 @@ public class kontroler3 implements Initializable {
         tabelaDaoSQL.update(tabela1);
 
         tabela.getItems().addAll(lista);
+
+        OdigranaKola kolo1 = new OdigranaKola();
+        OdigranaKola kolo2 = new OdigranaKola();
+        OdigranaKola kolo3 = new OdigranaKola();
+        OdigranaKola kolo4 = new OdigranaKola();
+
+        kolo1.setIgr1(Double.parseDouble(igr1.getText()));
+        kolo1.setIgrac1(igrac1.getText());
+        kolo1.setIgrac2(igrac2.getText());
+        kolo1.setIgr2(Double.parseDouble(igr2.getText()));
+
+        kolo2.setIgr1(Double.parseDouble(igr3.getText()));
+        kolo2.setIgrac1(igrac3.getText());
+        kolo2.setIgrac2(igrac4.getText());
+        kolo2.setIgr2(Double.parseDouble(igr4.getText()));
+
+        kolo3.setIgr1(Double.parseDouble(igr5.getText()));
+        kolo3.setIgrac1(igrac5.getText());
+        kolo3.setIgrac2(igrac6.getText());
+        kolo3.setIgr2(Double.parseDouble(igr6.getText()));
+
+        kolo4.setIgr1(Double.parseDouble(igr7.getText()));
+        kolo4.setIgrac1(igrac7.getText());
+        kolo4.setIgrac2(igrac8.getText());
+        kolo4.setIgr2(Double.parseDouble(igr8.getText()));
     }
 
     public void SljedeceKolo(ActionEvent actionEvent) {
