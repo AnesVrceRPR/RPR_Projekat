@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,9 +25,16 @@ public class UcesnikManagerTest {
     public void InicijalizacijaObjekata()
     {
         ucesnikManager = Mockito.mock(UcesnikManager.class);
+        ucesnik = new Ucesnik();
+        ucesnik.setId(1);
+        ucesnik.setRejting(2666);
+        ucesnik.setBrojOsvojenihBodova(3.);
 
-
+        ucesnikDaoSQLMock = Mockito.mock(UcesnikDaoSQLImpl.class);
+        ucesnici = new ArrayList<>();
+        ucesnici.addAll(Arrays.asList(new Ucesnik(2, "isam", 1000, 2.), new Ucesnik(3, "isam", 1000, 2.)));
     }
+
 
     @Test
     public void rejtingManjiOd0Test1() {
