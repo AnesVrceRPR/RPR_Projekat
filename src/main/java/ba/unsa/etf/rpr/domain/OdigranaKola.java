@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * JavaBeans klasa, sadrži gettere i settere za sve privatne atribute
  * konstruktor sa i bez parametara
- * toSTring, hashCodei equals
+ * toSTring, hashCode i equals
  */
 
 

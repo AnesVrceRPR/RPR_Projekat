@@ -3,6 +3,12 @@ package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * JavaBeans klasa, sadrži gettere i settere za sve privatne atribute
+ * konstruktor sa i bez parametara
+ * toSTring, hashCode, equals i compareTo
+ */
+
 public class Ucesnik implements Comparable<Ucesnik>, Serializable{
     private int id;
     private String imeIPrezime;
