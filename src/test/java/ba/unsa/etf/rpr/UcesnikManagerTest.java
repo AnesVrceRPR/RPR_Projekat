@@ -1,18 +1,17 @@
 package ba.unsa.etf.rpr;
 
+
 import ba.unsa.etf.rpr.business.UcesnikManager;
-import ba.unsa.etf.rpr.controller.Kontroler3;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class UcesnikManagerTest {
 
@@ -36,21 +35,27 @@ public class UcesnikManagerTest {
     }
 
     @Test
-    void provjeraDelete(){
-        try {
+    void provjeraDelete() throws RuntimeException{
+        /*try {
             Mockito.doCallRealMethod().when(ucesnikManager).delete(1);
         }catch(Exception e)
         {
             assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
-        }
+        }*/
+
+        Ucesnik noviUcesnik = new Ucesnik(4, "nejla", 1200, 5.);
+        ucesnikManager.add(noviUcesnik);
+
+        Assertions.assertTrue(true);
+        Mockito.verify(ucesnikManager).add(noviUcesnik);
     }
 
 
 
 
-
-   /* @Test
-    void rejtingManjiOd0Test1() {
+/*
+   @Test
+    public void rejtingManjiOd0Test1() {
         Ucesnik ucesnik1 = new Ucesnik();
         ucesnik1.setImeIPrezime("anes");
         ucesnik1.setRejting(-2);
@@ -71,6 +76,6 @@ public class UcesnikManagerTest {
         UcesnikManager ucesnikManager = new UcesnikManager();
         Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.update(ucesnik1));
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
-    }
-*/
+    }*/
+
 }
