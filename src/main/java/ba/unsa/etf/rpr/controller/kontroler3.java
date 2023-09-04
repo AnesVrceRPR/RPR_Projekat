@@ -238,4 +238,8 @@ public class kontroler3 implements Initializable {
         igrac8.setText(tabela1.getMjesto8());
 
     }
+
+    public void prikaziOdigranaKola(ActionEvent actionEvent) {
+
+    }
 }
