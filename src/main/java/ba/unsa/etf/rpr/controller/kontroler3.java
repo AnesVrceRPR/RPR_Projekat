@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controller;
 
+import ba.unsa.etf.rpr.dao.OdigranaKolaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.OdigranaKola;
@@ -215,6 +216,12 @@ public class kontroler3 implements Initializable {
         kolo4.setIgrac1(igrac7.getText());
         kolo4.setIgrac2(igrac8.getText());
         kolo4.setIgr2(Double.parseDouble(igr8.getText()));
+
+        OdigranaKolaDaoSQLImpl odigranaKolaDaoSQL = new OdigranaKolaDaoSQLImpl();
+        odigranaKolaDaoSQL.update(kolo1);
+        odigranaKolaDaoSQL.update(kolo2);
+        odigranaKolaDaoSQL.update(kolo3);
+        odigranaKolaDaoSQL.update(kolo4);
     }
 
     public void SljedeceKolo(ActionEvent actionEvent) {
