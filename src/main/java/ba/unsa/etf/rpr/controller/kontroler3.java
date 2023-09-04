@@ -88,13 +88,13 @@ public class kontroler3 implements Initializable {
     {
         try{
             Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr1.getText());
-            Double.parseDouble(igr1.getText());
+            Double.parseDouble(igr2.getText());
+            Double.parseDouble(igr3.getText());
+            Double.parseDouble(igr4.getText());
+            Double.parseDouble(igr5.getText());
+            Double.parseDouble(igr6.getText());
+            Double.parseDouble(igr7.getText());
+            Double.parseDouble(igr8.getText());
         }catch(Exception e)
         {
             throw new NijeUnesenBrojException("nije unesen broj");
