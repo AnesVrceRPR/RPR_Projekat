@@ -78,20 +78,38 @@
             <TextField fx:id="igr2" GridPane.columnIndex="1" />
             <TextField fx:id="igr4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="igr6" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="igr8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </GridPane>
-      <Button mnemonicParsing="false" onAction="#SljedeceKolo" prefHeight="70.0" prefWidth="214.0" text="Sljedece Kolo" GridPane.columnIndex="2" GridPane.rowIndex="2">
-         <font>
-            <Font size="24.0" />
-         </font></Button>
       <Button fx:id="potvrda" mnemonicParsing="false" onAction="#azurirajTabelu" prefHeight="69.0" prefWidth="219.0" text="Potvrdi" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font size="27.0" />
          </font></Button>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <children>
+            <Button mnemonicParsing="false" onAction="#SljedeceKolo" prefHeight="70.0" prefWidth="214.0" text="Sljedece Kolo">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#prikaziOdigranaKola" prefHeight="64.0" prefWidth="248.0" text="Odigrana Kola">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </VBox>
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
