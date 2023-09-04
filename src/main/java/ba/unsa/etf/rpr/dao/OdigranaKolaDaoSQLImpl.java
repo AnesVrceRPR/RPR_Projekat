@@ -8,9 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * Implementacija Dao
+ */
+
 public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
 
     private Connection connection;
+
+    /**
+     * Uspostavljanje konekcije
+     */
 
     public OdigranaKolaDaoSQLImpl(){
         try {
@@ -24,6 +32,12 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
             e.printStackTrace();
         }
     }
+
+    /**
+     * metoda vraća odigrano kolo sa odgovarajućim id
+     * @param id - id od željenog kola
+     * @return OdigranaKola
+     */
 
     @Override
     public OdigranaKola getById(int id) {
@@ -50,6 +64,12 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         return null;
     }
 
+    /**
+     * metoda dodaje odigrano kolo u tabelu
+     * @param odigranaKola - kolo koje se želi dodati u tabelu
+     * @return OdigranaKola
+     */
+
     @Override
     public OdigranaKola add(OdigranaKola odigranaKola) {
         String insert = "INSERT INTO OdigranaKola(Bodovi1,Igrac1,Igrac2,Bodovi2) VALUES(?, ?, ?, ?)";
@@ -74,6 +94,12 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         return null;
     }
 
+    /**
+     * metoda update-uje kolo u tabeli kolom dodijeljenim parametrom
+     * @param odigranaKola - odigrano kolo koje se želi update-ovati
+     * @return OdigranaKola
+     */
+
     @Override
     public OdigranaKola update(OdigranaKola odigranaKola) {
         String update = "UPDATE OdigranaKola SET Bodovi1 = ?, Igrac1 = ?, Igrac2 = ?, Bodovi2 = ? WHERE id = ?";
@@ -93,6 +119,11 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         }
     }
 
+    /**
+     * metoda briše odgovarajuće odigrano kolo iz tabele
+     * @param id - id od kola koje se želi obrisati
+     */
+
     public void delete(int id) {
         String delete = "DELETE FROM OdigranaKola WHERE id = ?";
         try{
@@ -104,6 +135,10 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         }
     }
 
+    /**
+     * metoda vraća sva odigrana kola iz tabele
+     * @return OdigranaKola-Lista svih odigranih kola
+     */
 
     @Override
     public List<OdigranaKola> getAll() {
