@@ -8,7 +8,18 @@ import ba.unsa.etf.rpr.domain.Ucesnik;
 
 import java.util.List;
 
+/**
+ * Business Logic Layer za upravljanje tabelama
+ */
+
 public class TabelaMenager {
+
+    /**
+     * metoda vraća tabelu sa odgovarajućim id
+     * baca izuzetak ako tabela ne postoji
+     * @param id - id od željene tabele
+     * @return Tabela
+     */
 
     public Tabela getById(int id)
     {
@@ -26,6 +37,12 @@ public class TabelaMenager {
 
         return tabelaDaoSQL.getById(id);
     }
+
+    /**
+     * metoda briše odgovarajuću tabelu iz baze
+     * baca izuzetak ako tabela ne postoji
+     * @param id - id od tabele koja se želi obrisati
+     */
 
     public void delete(int id)
     {
