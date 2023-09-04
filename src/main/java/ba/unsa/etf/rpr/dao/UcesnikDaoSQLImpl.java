@@ -7,9 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * Implementacija Dao
+ */
+
+
 public class UcesnikDaoSQLImpl implements UcesnikDao {
 
     private Connection connection;
+
+    /**
+     * Uspostavljanje konekcije
+     */
 
     public UcesnikDaoSQLImpl(){
         try {
@@ -23,6 +32,14 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
             e.printStackTrace();
         }
     }
+
+
+    /**
+     * metoda vraća ušesnika sa odgovarajućim id
+     * @param id - id od željenog učesnika
+     * @return Ucesnik
+     */
+
 
     @Override
     public Ucesnik getById(int id) {
@@ -46,6 +63,12 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         }
         return null;
     }
+
+    /**
+     * metoda dodaje ucesnika u bazu
+     * @param ucesnik- ucesnik koji se želi dodati u bazu
+     * @return Ucesnik
+     */
 
     @Override
     public Ucesnik add(Ucesnik ucesnik) {
@@ -71,6 +94,12 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         return null;
     }
 
+    /**
+     * metoda update-uje ucesnika u bazi ucesnikom dodijeljenog parametrom
+     * @param ucesnik - ucesnik koji se želi update-ovati
+     * @return Ucesnik
+     */
+
     @Override
     public Ucesnik update(Ucesnik ucesnik) {
         String update = "UPDATE Ucesnik SET Ime_i_Prezime = ?, Rejting = ?, Broj_Osvojenih_Bodova = ? WHERE id = ?";
@@ -89,6 +118,11 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         }
     }
 
+    /**
+     * metoda briše odgovarajućeg ucesnika iz baze
+     * @param id - id od ucesnika koji se želi obrisati
+     */
+
     public void delete(int id) {
         String delete = "DELETE FROM Ucesnik WHERE id = ?";
         try{
@@ -99,6 +133,11 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
             e.printStackTrace();
         }
     }
+
+    /**
+     * metoda vraća sve ucesnike iz baze
+     * @return List<Ucesnik> </>-Lista svih ucesnika iz baze
+     */
 
     @Override
     public List<Ucesnik> getAll() {
