@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.controller;
 
-import ba.unsa.etf.rpr.Exception.NijeUnesenBrojException;
+import ba.unsa.etf.rpr.Exception.NijeUnesenIspravanBrojException;
 import ba.unsa.etf.rpr.dao.OdigranaKolaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
@@ -97,7 +97,7 @@ public class kontroler3 implements Initializable {
             Double.parseDouble(igr8.getText());
         }catch(Exception e)
         {
-            throw new NijeUnesenBrojException("nije unesen broj");
+            throw new NijeUnesenIspravanBrojException(e.getMessage());
         }
     }
 
@@ -244,10 +244,10 @@ public class kontroler3 implements Initializable {
         kolo4.setIgr2(Double.parseDouble(igr8.getText()));
 
         OdigranaKolaDaoSQLImpl odigranaKolaDaoSQL = new OdigranaKolaDaoSQLImpl();
-        odigranaKolaDaoSQL.update(kolo1);
-        odigranaKolaDaoSQL.update(kolo2);
-        odigranaKolaDaoSQL.update(kolo3);
-        odigranaKolaDaoSQL.update(kolo4);
+        odigranaKolaDaoSQL.add(kolo1);
+        odigranaKolaDaoSQL.add(kolo2);
+        odigranaKolaDaoSQL.add(kolo3);
+        odigranaKolaDaoSQL.add(kolo4);
     }
 
     public void SljedeceKolo(ActionEvent actionEvent) {
@@ -262,16 +262,13 @@ public class kontroler3 implements Initializable {
         igrac6.setText(tabela1.getMjesto6());
         igrac7.setText(tabela1.getMjesto7());
         igrac8.setText(tabela1.getMjesto8());
-
     }
 
     public void prikaziOdigranaKola(ActionEvent actionEvent) throws IOException {
-
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor4.fxml"));
         stage.setTitle("Odigrana kola");
         stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.show();
-
     }
 }
