@@ -1,13 +1,23 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class OdigranaKola {
+public class OdigranaKola implements Serializable {
     private int id;
     private Double igr1;
     private String igrac1;
     private String igrac2;
     private Double igr2;
+
+
+    public OdigranaKola(int id, Double igr1, String igrac1, String igrac2, Double igr2) {
+        this.id = id;
+        this.igr1 = igr1;
+        this.igrac1 = igrac1;
+        this.igrac2 = igrac2;
+        this.igr2 = igr2;
+    }
 
     public Double getIgr1() {
         return igr1;

@@ -1,8 +1,9 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Tabela {
+public class Tabela implements Serializable {
     private int id;
     private String mjesto1;
     private String mjesto2;
