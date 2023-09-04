@@ -4,6 +4,8 @@ import ba.unsa.etf.rpr.domain.OdigranaKola;
 import ba.unsa.etf.rpr.domain.Tabela;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
 
@@ -96,4 +98,29 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         }
     }
 
+
+    @Override
+    public List<OdigranaKola> getAll() {
+        String query = "SELECT * FROM OdigranaKola";
+        List<OdigranaKola> odigranaKolas = new ArrayList<OdigranaKola>();
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){ // result set is iterator.
+                OdigranaKola odigranaKola = new OdigranaKola();
+                odigranaKola.setId(rs.getInt("id"));
+
+                odigranaKola.setIgr1(rs.getDouble("Bodovi1"));
+                odigranaKola.setIgrac1(rs.getString("Igrac1"));
+                odigranaKola.setIgrac2(rs.getString("Igrac2"));
+                odigranaKola.setIgr1(rs.getDouble("Bodovi2"));
+                odigranaKolas.add(odigranaKola);
+            }
+            rs.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace(); // poor error handling
+        }
+        return odigranaKolas;
+    }
 }
