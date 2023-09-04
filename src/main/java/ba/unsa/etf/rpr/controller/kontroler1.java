@@ -19,7 +19,7 @@ public class kontroler1 {
 
     public void buttonclick(ActionEvent actionEvent) throws IOException {
 
-        if(!ime.getText().equals("anes") || !lozinka.getText().equals("1234"))
+        if(ime.getText().equals("anes") && lozinka.getText().equals("1234"))
         {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor2.fxml"));
@@ -30,14 +30,10 @@ public class kontroler1 {
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Greška");
-            alert.setHeaderText("Potreban ponovna prijava");
+            alert.setHeaderText("Potrebna ponovna prijava");
             alert.setContentText("pogrešno korisničko ime ili lozinka");
 
             alert.showAndWait();
         }
-
-
-
-
     }
 }

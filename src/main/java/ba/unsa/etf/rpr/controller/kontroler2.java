@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controller;
 
+import ba.unsa.etf.rpr.business.UcesnikManager;
 import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Tabela;
@@ -44,8 +45,9 @@ public class kontroler2 implements Initializable {
         ucesnik.setRejting(Integer.parseInt(label2.getText()));
         ucesnik.setBrojOsvojenihBodova(0.);
 
-        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
-        ucesnikDaoSQL.add(ucesnik);
+        UcesnikManager ucesnikManager = new UcesnikManager();
+        ucesnikManager.add(ucesnik);
+
 
         ListaImena.getItems().add(ucesnik);
     }
@@ -66,7 +68,8 @@ public class kontroler2 implements Initializable {
             }
         }
 
-        ucesnikDaoSQL.delete(id);
+        UcesnikManager ucesnikManager = new UcesnikManager();
+        ucesnikManager.delete(id);
 
         ListaImena.getItems().remove(obrisani);
     }
