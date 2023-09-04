@@ -10,6 +10,13 @@ public class OdigranaKola implements Serializable {
     private String igrac2;
     private Double igr2;
 
+    public OdigranaKola() {
+        this.id = 0;
+        this.igr1 = 0.;
+        this.igrac1 = "";
+        this.igrac2 = "";
+        this.igr2 = 0.;
+    }
 
     public OdigranaKola(int id, Double igr1, String igrac1, String igrac2, Double igr2) {
         this.id = id;
