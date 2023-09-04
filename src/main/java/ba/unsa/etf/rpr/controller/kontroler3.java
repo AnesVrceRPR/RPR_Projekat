@@ -129,11 +129,13 @@ public class kontroler3 implements Initializable {
         {
             ucesnik1 = PronadjiIgraca(igrac1.getText());
             ucesnik1.setBrojOsvojenihBodova(PronadjiIgraca(igrac1.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik1.setRejting(ucesnik1.getRejting() + 8);
         }
         if(Integer.parseInt(igr1.getText()) == 0 && Integer.parseInt(igr2.getText()) == 1)
         {
             ucesnik2 = PronadjiIgraca(igrac2.getText());
             ucesnik2.setBrojOsvojenihBodova(PronadjiIgraca(igrac2.getText()).getBrojOsvojenihBodova() + 1);
+            ucesnik2.setRejting(ucesnik2.getRejting() + 8);
         }
 
         if(Integer.parseInt(igr3.getText()) == 0 && Integer.parseInt(igr4.getText()) == 0)
