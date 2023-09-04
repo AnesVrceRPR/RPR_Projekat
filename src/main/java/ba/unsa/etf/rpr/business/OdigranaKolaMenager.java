@@ -13,7 +13,19 @@ public class OdigranaKolaMenager {
 
     public OdigranaKola getById(int id)
     {
+        OdigranaKolaDaoSQLImpl odigranaKolaDaoSQL = new OdigranaKolaDaoSQLImpl();
+        List<OdigranaKola> odigranaKolas = odigranaKolaDaoSQL.getAll();
 
+        boolean brojac = false;
+
+        for(OdigranaKola odigranaKola: odigranaKolas)
+        {
+            if(odigranaKola.getId() == id) brojac = true;
+        }
+
+        if(brojac == false) throw new unosNijeIspravan("Tabela ne postoji");
+
+        return odigranaKolaDaoSQL.getById(id);
     }
 
     public void delete(int id)
