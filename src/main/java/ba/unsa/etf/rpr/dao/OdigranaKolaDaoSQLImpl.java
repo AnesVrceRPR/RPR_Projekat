@@ -6,6 +6,7 @@ import ba.unsa.etf.rpr.domain.Tabela;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
 
@@ -13,6 +14,7 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
 
     public OdigranaKolaDaoSQLImpl(){
         try {
+            Properties p = new Properties();
             this.connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_RPRbaza1","freedb_avrce1", "sUf2N#3?An58!@h");
         } catch (Exception e) {
             e.printStackTrace();
