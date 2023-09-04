@@ -12,6 +12,13 @@ public class UcesnikManager {
         return ucesnikDaoSQL.add(ucesnik);
     }
 
+    public Ucesnik update(Ucesnik ucesnik)
+    {
+        if(ucesnik.getRejting() <0 ) throw new unosNijeIspravan("Rejting ne može biti manji od 0");
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        return ucesnikDaoSQL.update(ucesnik);
+    }
+
 
 
 
