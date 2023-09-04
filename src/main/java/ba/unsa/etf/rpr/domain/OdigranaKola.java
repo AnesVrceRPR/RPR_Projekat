@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
-public class SljedeceKolo {
+public class OdigranaKola {
     private int id;
     private String igrac1;
     private String igrac2;
@@ -41,8 +41,8 @@ public class SljedeceKolo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        SljedeceKolo sljedeceKolo = (SljedeceKolo) o;
-        return id == sljedeceKolo.id;
+        OdigranaKola odigranaKola = (OdigranaKola) o;
+        return id == odigranaKola.id;
     }
     @Override
     public int hashCode() {

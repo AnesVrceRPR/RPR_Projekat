@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 public class Ucesnik implements Comparable<Ucesnik>{
