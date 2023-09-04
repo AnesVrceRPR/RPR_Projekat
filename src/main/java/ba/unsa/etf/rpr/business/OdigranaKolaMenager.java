@@ -11,6 +11,11 @@ import java.util.List;
 
 public class OdigranaKolaMenager {
 
+    public OdigranaKola getById(int id)
+    {
+
+    }
+
     public void delete(int id)
     {
         OdigranaKolaDaoSQLImpl odigranaKolaDaoSQL = new OdigranaKolaDaoSQLImpl();

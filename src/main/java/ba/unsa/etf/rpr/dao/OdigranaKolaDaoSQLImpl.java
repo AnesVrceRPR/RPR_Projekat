@@ -38,7 +38,7 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
                 odigranaKola.setIgr1(rs.getDouble("Bodovi1"));
                 odigranaKola.setIgrac1(rs.getString("Igrac1"));
                 odigranaKola.setIgrac2(rs.getString("Igrac2"));
-                odigranaKola.setIgr1(rs.getDouble("Bodovi2"));
+                odigranaKola.setIgr2(rs.getDouble("Bodovi2"));
                 rs.close();
                 return odigranaKola;
             } else {
