@@ -7,8 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * Implementacija Dao
+ */
+
 public class TabelaDaoSQLImpl implements TabelaDao {
     private Connection connection;
+
+
+    /**
+     * Uspostavljanje konekcije
+     */
 
     public TabelaDaoSQLImpl(){
         try {
@@ -22,6 +31,13 @@ public class TabelaDaoSQLImpl implements TabelaDao {
             e.printStackTrace();
         }
     }
+
+    /**
+     * metoda vraća tabelu sa odgovarajućim id
+     * @param id - id od željene tabele
+     * @return Tabela
+     */
+
 
     @Override
     public Tabela getById(int id) {
@@ -52,6 +68,12 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         return null;
     }
 
+    /**
+     * metoda dodaje trenutnu tabelu u bazu
+     * @param tabela- kolo koje se želi dodati u bazu
+     * @return Tabela
+     */
+
     @Override
     public Tabela add(Tabela tabela) {
         String insert = "INSERT INTO Tabela(Mjesto1,Mjesto2,Mjesto3,Mjesto4,Mjesto5,Mjesto6,Mjesto7,Mjesto8) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
@@ -81,6 +103,12 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         return null;
     }
 
+    /**
+     * metoda update-uje tabelu u bazi tabelom dodijeljenom parametrom
+     * @param tabela - tabela koja se želi update-ovati
+     * @return Tabela
+     */
+
     @Override
     public Tabela update(Tabela tabela) {
         String update = "UPDATE Tabela SET Mjesto1 = ?, Mjesto2 = ?, Mjesto3 = ?, Mjesto4 = ?, Mjesto5 = ?, Mjesto6 = ?, Mjesto7 = ?, Mjesto8 = ? WHERE id = ?";
@@ -104,6 +132,11 @@ public class TabelaDaoSQLImpl implements TabelaDao {
         }
     }
 
+    /**
+     * metoda briše odgovarajuću tabelu iz baze
+     * @param id - id od tabele koja se želi obrisati
+     */
+
     public void delete(int id) {
         String delete = "DELETE FROM Tabela WHERE id = ?";
         try{
@@ -114,6 +147,11 @@ public class TabelaDaoSQLImpl implements TabelaDao {
             e.printStackTrace();
         }
     }
+
+    /**
+     * metoda vraća sve tabele iz baze
+     * @return List<Tabela> </>-Lista svih tabela iz baze
+     */
 
     @Override
     public List<Tabela> getAll() {

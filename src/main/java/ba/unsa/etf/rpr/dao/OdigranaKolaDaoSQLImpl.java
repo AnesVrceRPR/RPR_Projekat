@@ -34,7 +34,7 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
     }
 
     /**
-     * metoda vraća odigrano kolo sa odgovarajućim id
+     * metoda vraća odigrano kolo iz baze sa odgovarajućim id
      * @param id - id od željenog kola
      * @return OdigranaKola
      */
@@ -65,8 +65,8 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
     }
 
     /**
-     * metoda dodaje odigrano kolo u tabelu
-     * @param odigranaKola - kolo koje se želi dodati u tabelu
+     * metoda dodaje odigrano kolo u bazu
+     * @param odigranaKola - kolo koje se želi dodati u bazu
      * @return OdigranaKola
      */
 
@@ -95,7 +95,7 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
     }
 
     /**
-     * metoda update-uje kolo u tabeli kolom dodijeljenim parametrom
+     * metoda update-uje kolo u bazi kolom dodijeljenim parametrom
      * @param odigranaKola - odigrano kolo koje se želi update-ovati
      * @return OdigranaKola
      */
@@ -120,7 +120,7 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
     }
 
     /**
-     * metoda briše odgovarajuće odigrano kolo iz tabele
+     * metoda briše odgovarajuće odigrano kolo iz baze
      * @param id - id od kola koje se želi obrisati
      */
 
@@ -136,8 +136,8 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
     }
 
     /**
-     * metoda vraća sva odigrana kola iz tabele
-     * @return OdigranaKola-Lista svih odigranih kola
+     * metoda vraća sva odigrana kola iz baze
+     * @return List<OdigranaKola>-Lista svih odigranih kola iz baze
      */
 
     @Override
