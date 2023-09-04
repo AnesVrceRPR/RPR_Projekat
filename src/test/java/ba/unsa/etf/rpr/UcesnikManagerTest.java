@@ -34,12 +34,18 @@ public class UcesnikManagerTest {
     }
 
     @Test
-    public void ProvjeriUnosRezultata()
+    public void ProvjeriUnosRezultataTest1()
     {
         Kontroler3 kontroler3 = new Kontroler3();
 
         Exception e = assertThrows(RuntimeException.class, () -> kontroler3.provjeriRezultate("f"));
         assertTrue(e.getMessage().contains("Potrebno je unijeti 0 ili 1"));
+    }
+
+    @Test
+    public void ProvjeriUnosRezultataTest2()
+    {
+
     }
 
 }
