@@ -22,13 +22,13 @@ public class App
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         ucesnikDaoSQL.update(ucesnik);*/
 
-        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+       /* UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         List<Ucesnik> lista = ucesnikDaoSQL.getAll();
 
         for(Ucesnik ucesnik : lista)
         {
             System.out.println(ucesnik.getImeIPrezime());
-        }
+        }*/
 
     }
 }

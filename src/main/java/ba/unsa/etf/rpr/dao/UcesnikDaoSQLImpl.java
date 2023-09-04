@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.domain.Ucesnik;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class UcesnikDaoSQLImpl implements UcesnikDao {
 
@@ -12,7 +13,12 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
 
     public UcesnikDaoSQLImpl(){
         try {
-            this.connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_RPRbaza1","freedb_avrce1", "sUf2N#3?An58!@h");
+            Properties p = new Properties();
+            p.load(ClassLoader.getSystemResource("application.properties").openStream());
+            String url = p.getProperty("db.connection_string");
+            String username = p.getProperty("db.username");
+            String password = p.getProperty("db.password");
+            this.connection = DriverManager.getConnection(url,username,password);
         } catch (Exception e) {
             e.printStackTrace();
         }
