@@ -24,9 +24,19 @@ public class UcesnikManager {
 
     public Ucesnik getById(int id)
     {
+        UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
+        List<Ucesnik> lista =  ucesnikDaoSQL.getAll();
 
+        boolean brojac = false;
 
+        for(Ucesnik ucesnik : lista)
+        {
+            if(ucesnik.getId() == id) brojac = true;
+        }
 
+        if(brojac == false) throw new unosNijeIspravan("Korisnik ne postoji");
+
+        return ucesnikDaoSQL.getById(id);
     }
 
     public void delete(int id)
