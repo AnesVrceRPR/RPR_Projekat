@@ -9,9 +9,17 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * kontroler za 4. prozor
+ */
+
 public class Kontroler4 implements Initializable {
 
     public ListView ListaSvihKola;
+
+    /**
+     * početno popunjavanje liste svih kola
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
