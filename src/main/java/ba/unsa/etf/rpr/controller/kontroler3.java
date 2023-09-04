@@ -7,17 +7,24 @@ import ba.unsa.etf.rpr.domain.OdigranaKola;
 import ba.unsa.etf.rpr.domain.Tabela;
 import ba.unsa.etf.rpr.domain.Ucesnik;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.awt.font.ImageGraphicAttribute;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class kontroler3 implements Initializable {
     public Label igrac3;
@@ -239,7 +246,13 @@ public class kontroler3 implements Initializable {
 
     }
 
-    public void prikaziOdigranaKola(ActionEvent actionEvent) {
+    public void prikaziOdigranaKola(ActionEvent actionEvent) throws IOException {
+
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor4.fxml"));
+        stage.setTitle("Odigrana kola");
+        stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+        stage.show();
 
     }
 }
