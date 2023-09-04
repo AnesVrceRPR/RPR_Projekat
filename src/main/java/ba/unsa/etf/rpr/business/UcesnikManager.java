@@ -22,6 +22,13 @@ public class UcesnikManager {
         return ucesnikDaoSQL.update(ucesnik);
     }
 
+    public Ucesnik getById(int id)
+    {
+
+
+
+    }
+
     public void delete(int id)
     {
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
