@@ -41,7 +41,7 @@ public class TabelaMenager {
 
         if(brojac == false) throw new unosNijeIspravan("Tabela ne postoji");
 
-        tabelaDaoSQL.delete();
+        tabelaDaoSQL.delete(id);
     }
 
 }
