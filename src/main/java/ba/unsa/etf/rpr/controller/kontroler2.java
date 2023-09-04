@@ -48,7 +48,6 @@ public class kontroler2 implements Initializable {
         UcesnikManager ucesnikManager = new UcesnikManager();
         ucesnikManager.add(ucesnik);
 
-
         ListaImena.getItems().add(ucesnik);
     }
 

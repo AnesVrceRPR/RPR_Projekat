@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.runtime.ECMAException;
 
 import java.io.IOException;
 import java.net.URL;
@@ -95,13 +96,20 @@ public class kontroler3 implements Initializable {
             Double.parseDouble(igr6.getText());
             Double.parseDouble(igr7.getText());
             Double.parseDouble(igr8.getText());
+
+            if(Double.parseDouble(igr1.getText())!= 0 && Double.parseDouble(igr1.getText())!= 1) throw new Exception();
+            if(Double.parseDouble(igr2.getText())!= 0 && Double.parseDouble(igr2.getText())!= 1) throw new Exception();
+            if(Double.parseDouble(igr3.getText())!= 0 && Double.parseDouble(igr3.getText())!= 1) throw new Exception();
+            if(Double.parseDouble(igr4.getText())!= 0 && Double.parseDouble(igr4.getText())!= 1) throw new Exception();
+            if(Double.parseDouble(igr5.getText())!= 0 && Double.parseDouble(igr5.getText())!= 1) throw new Exception();
+            if(Double.parseDouble(igr6.getText())!= 0 && Double.parseDouble(igr6.getText())!= 1) throw new Exception();
+            if(Double.parseDouble(igr7.getText())!= 0 && Double.parseDouble(igr7.getText())!= 1) throw new Exception();
+            if(Double.parseDouble(igr8.getText())!= 0 && Double.parseDouble(igr8.getText())!= 1) throw new Exception();
         }catch(Exception e)
         {
-            throw new unosNijeIspravan(e.getMessage());
+            throw new unosNijeIspravan("Potrebno je unijeti 0 ili 1");
         }
     }
-
-
 
     public void azurirajTabelu(ActionEvent actionEvent) {
 
