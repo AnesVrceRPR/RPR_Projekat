@@ -42,6 +42,34 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         return null;
     }
 
+    @Override
+    public Tabela add(Tabela tabela) {
+        String insert = "INSERT INTO Tabela(Mjesto1,Mjesto2,Mjesto3,Mjesto4,Mjesto5,Mjesto6,Mjesto7,Mjesto8) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+
+            stmt.setString(1, tabela.getMjesto1());
+            stmt.setString(2, tabela.getMjesto2());
+            stmt.setString(3, tabela.getMjesto3());
+            stmt.setString(4, tabela.getMjesto4());
+            stmt.setString(5, tabela.getMjesto5());
+            stmt.setString(6, tabela.getMjesto6());
+            stmt.setString(7, tabela.getMjesto7());
+            stmt.setString(8, tabela.getMjesto8());
+
+            stmt.executeUpdate();
+
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next(); // we know that there is one key
+            tabela.setId(rs.getInt(1)); //set id to return it back
+
+            return tabela;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
 }
