@@ -268,8 +268,8 @@ public class kontroler3 implements Initializable {
     }
 
     public void SljedeceKolo(ActionEvent actionEvent) {
-        TabelaDaoSQLImpl tabelaDaoSQLImpl = new TabelaDaoSQLImpl();
-        Tabela tabela1 = tabelaDaoSQLImpl.getById(0);
+        TabelaMenager tabelaMenager = new TabelaMenager();
+        Tabela tabela1 = tabelaMenager.getById(0);
 
         igrac1.setText(tabela1.getMjesto1());
         igrac2.setText(tabela1.getMjesto2());
