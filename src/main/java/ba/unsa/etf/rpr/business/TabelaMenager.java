@@ -27,7 +27,11 @@ public class TabelaMenager {
         return tabelaDaoSQL.getById(id);
     }
 
-
+    public void delete(int id)
+    {
 
     }
+
+
+
 }
