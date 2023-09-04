@@ -51,7 +51,7 @@ public class OdigranaKola {
 
     @Override
     public String toString() {
-        return igrac1  + " " + igrac2;
+        return igr1 + " " + igrac1  +  " " + igrac2 + " " + igr2;
     }
 
     @Override
