@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UcesnikManagerTest {
 
     @Test
-    public void rejtingManjiOd0()
+    public void rejtingManjiOd0Test1()
     {
         Ucesnik ucesnik = new Ucesnik();
         ucesnik.setImeIPrezime("anes");
@@ -21,4 +21,9 @@ public class UcesnikManagerTest {
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
     }
 
+    @Test
+    public void rejtingManjiOd0Test2()
+    {
+
+    }
 }
