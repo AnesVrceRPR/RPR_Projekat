@@ -66,5 +66,24 @@ public class OdigranaKolaDaoSQLImpl implements OdigranaKolaDao {
         return null;
     }
 
+    @Override
+    public OdigranaKola update(OdigranaKola odigranaKola) {
+        String update = "UPDATE OdigranaKola SET Bodovi1 = ?, Igrac1 = ?, Igrac2 = ?, Bodovi2 = ? WHERE id = ?";
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
+            stmt.setObject(1, odigranaKola.getIgr1());
+            stmt.setObject(2, odigranaKola.getIgrac1()1());
+            stmt.setObject(3, odigranaKola.getIgrac2());
+            stmt.setObject(4, odigranaKola.getIgr2());
+            stmt.setObject(5, odigranaKola.getId());
+            stmt.executeUpdate();
+            return odigranaKola;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
 }
