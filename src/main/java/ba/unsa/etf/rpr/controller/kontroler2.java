@@ -40,9 +40,9 @@ public class kontroler2 implements Initializable {
 
     public void dodajIgraca(ActionEvent actionEvent) {
         Ucesnik ucesnik = new Ucesnik();
-        ucesnik.setIme_i_Prezime(label1.getText());
+        ucesnik.setImeIPrezime(label1.getText());
         ucesnik.setRejting(Integer.parseInt(label2.getText()));
-        ucesnik.setBroj_Osvojenih_Bodova(0.);
+        ucesnik.setBrojOsvojenihBodova(0.);
 
         UcesnikDaoSQLImpl ucesnikDaoSQL = new UcesnikDaoSQLImpl();
         ucesnikDaoSQL.add(ucesnik);
@@ -59,7 +59,7 @@ public class kontroler2 implements Initializable {
 
         for(Ucesnik ucesnik : lista)
         {
-            if(ucesnik.getIme_i_Prezime().equals(label3.getText()))
+            if(ucesnik.getImeIPrezime().equals(label3.getText()))
             {
                 obrisani = ucesnik;
                 id = ucesnik.getId();
@@ -78,14 +78,14 @@ public class kontroler2 implements Initializable {
         Collections.sort(lista);
 
         Tabela tabela = new Tabela();
-        tabela.setMjesto1(lista.get(0).getIme_i_Prezime());
-        tabela.setMjesto2(lista.get(1).getIme_i_Prezime());
-        tabela.setMjesto3(lista.get(2).getIme_i_Prezime());
-        tabela.setMjesto4(lista.get(3).getIme_i_Prezime());
-        tabela.setMjesto5(lista.get(4).getIme_i_Prezime());
-        tabela.setMjesto6(lista.get(5).getIme_i_Prezime());
-        tabela.setMjesto7(lista.get(6).getIme_i_Prezime());
-        tabela.setMjesto8(lista.get(7).getIme_i_Prezime());
+        tabela.setMjesto1(lista.get(0).getImeIPrezime());
+        tabela.setMjesto2(lista.get(1).getImeIPrezime());
+        tabela.setMjesto3(lista.get(2).getImeIPrezime());
+        tabela.setMjesto4(lista.get(3).getImeIPrezime());
+        tabela.setMjesto5(lista.get(4).getImeIPrezime());
+        tabela.setMjesto6(lista.get(5).getImeIPrezime());
+        tabela.setMjesto7(lista.get(6).getImeIPrezime());
+        tabela.setMjesto8(lista.get(7).getImeIPrezime());
 
         TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
         tabelaDaoSQL.update(tabela);

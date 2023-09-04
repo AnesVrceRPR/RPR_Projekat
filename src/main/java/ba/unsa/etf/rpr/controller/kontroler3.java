@@ -17,7 +17,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.awt.font.ImageGraphicAttribute;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
@@ -75,7 +74,7 @@ public class kontroler3 implements Initializable {
 
         for(Ucesnik ucesnik : lista)
         {
-            if(ucesnik.getIme_i_Prezime().equals(ime))
+            if(ucesnik.getImeIPrezime().equals(ime))
             {
                 return ucesnik;
             }
@@ -103,72 +102,72 @@ public class kontroler3 implements Initializable {
         {
             ucesnik1 = PronadjiIgraca(igrac1.getText());
             ucesnik2 = PronadjiIgraca(igrac2.getText());
-            ucesnik1.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac1.getText()).getBroj_Osvojenih_Bodova() + 0.5);
-            ucesnik2.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac2.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik1.setBrojOsvojenihBodova(PronadjiIgraca(igrac1.getText()).getBrojOsvojenihBodova() + 0.5);
+            ucesnik2.setBrojOsvojenihBodova(PronadjiIgraca(igrac2.getText()).getBrojOsvojenihBodova() + 0.5);
         }
         if(Integer.parseInt(igr1.getText()) == 1 && Integer.parseInt(igr2.getText()) == 0)
         {
             ucesnik1 = PronadjiIgraca(igrac1.getText());
-            ucesnik1.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac1.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik1.setBrojOsvojenihBodova(PronadjiIgraca(igrac1.getText()).getBrojOsvojenihBodova() + 1);
         }
         if(Integer.parseInt(igr1.getText()) == 0 && Integer.parseInt(igr2.getText()) == 1)
         {
             ucesnik2 = PronadjiIgraca(igrac2.getText());
-            ucesnik2.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac2.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik2.setBrojOsvojenihBodova(PronadjiIgraca(igrac2.getText()).getBrojOsvojenihBodova() + 1);
         }
 
         if(Integer.parseInt(igr3.getText()) == 0 && Integer.parseInt(igr4.getText()) == 0)
         {
             ucesnik3 = PronadjiIgraca(igrac3.getText());
-            ucesnik3.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac3.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik3.setBrojOsvojenihBodova(PronadjiIgraca(igrac3.getText()).getBrojOsvojenihBodova() + 0.5);
             ucesnik4 = PronadjiIgraca(igrac4.getText());
-            ucesnik4.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac4.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik4.setBrojOsvojenihBodova(PronadjiIgraca(igrac4.getText()).getBrojOsvojenihBodova() + 0.5);
         }
         if(Integer.parseInt(igr3.getText()) == 1 && Integer.parseInt(igr4.getText()) == 0)
         {
             ucesnik3 = PronadjiIgraca(igrac3.getText());
-            ucesnik3.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac3.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik3.setBrojOsvojenihBodova(PronadjiIgraca(igrac3.getText()).getBrojOsvojenihBodova() + 1);
         }
         if(Integer.parseInt(igr3.getText()) == 0 && Integer.parseInt(igr4.getText()) == 1)
         {
             ucesnik4 = PronadjiIgraca(igrac4.getText());
-            ucesnik4.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac4.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik4.setBrojOsvojenihBodova(PronadjiIgraca(igrac4.getText()).getBrojOsvojenihBodova() + 1);
         }
 
         if(Integer.parseInt(igr5.getText()) == 0 && Integer.parseInt(igr6.getText()) == 0)
         {
             ucesnik5 = PronadjiIgraca(igrac5.getText());
-            ucesnik5.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac5.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik5.setBrojOsvojenihBodova(PronadjiIgraca(igrac5.getText()).getBrojOsvojenihBodova() + 0.5);
             ucesnik6 = PronadjiIgraca(igrac6.getText());
-            ucesnik6.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac6.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik6.setBrojOsvojenihBodova(PronadjiIgraca(igrac6.getText()).getBrojOsvojenihBodova() + 0.5);
         }
         if(Integer.parseInt(igr5.getText()) == 1 && Integer.parseInt(igr6.getText()) == 0)
         {
             ucesnik5 = PronadjiIgraca(igrac5.getText());
-            ucesnik5.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac5.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik5.setBrojOsvojenihBodova(PronadjiIgraca(igrac5.getText()).getBrojOsvojenihBodova() + 1);
         }
         if(Integer.parseInt(igr5.getText()) == 0 && Integer.parseInt(igr6.getText()) == 1)
         {
             ucesnik6 = PronadjiIgraca(igrac6.getText());
-            ucesnik6.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac6.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik6.setBrojOsvojenihBodova(PronadjiIgraca(igrac6.getText()).getBrojOsvojenihBodova() + 1);
         }
 
         if(Integer.parseInt(igr7.getText()) == 0 && Integer.parseInt(igr8.getText()) == 0)
         {
             ucesnik7 = PronadjiIgraca(igrac7.getText());
-            ucesnik7.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac7.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik7.setBrojOsvojenihBodova(PronadjiIgraca(igrac7.getText()).getBrojOsvojenihBodova() + 0.5);
             ucesnik8 = PronadjiIgraca(igrac8.getText());
-            ucesnik8.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac8.getText()).getBroj_Osvojenih_Bodova() + 0.5);
+            ucesnik8.setBrojOsvojenihBodova(PronadjiIgraca(igrac8.getText()).getBrojOsvojenihBodova() + 0.5);
         }
         if(Integer.parseInt(igr7.getText()) == 1 && Integer.parseInt(igr8.getText()) == 0)
         {
             ucesnik7 = PronadjiIgraca(igrac7.getText());
-            ucesnik7.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac7.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik7.setBrojOsvojenihBodova(PronadjiIgraca(igrac7.getText()).getBrojOsvojenihBodova() + 1);
         }
         if(Integer.parseInt(igr7.getText()) == 0 && Integer.parseInt(igr8.getText()) == 1)
         {
             ucesnik8 = PronadjiIgraca(igrac8.getText());
-            ucesnik8.setBroj_Osvojenih_Bodova(PronadjiIgraca(igrac8.getText()).getBroj_Osvojenih_Bodova() + 1);
+            ucesnik8.setBrojOsvojenihBodova(PronadjiIgraca(igrac8.getText()).getBrojOsvojenihBodova() + 1);
         }
 
         ucesnikDaoSQLImpl.update(ucesnik1);
@@ -185,14 +184,14 @@ public class kontroler3 implements Initializable {
         Collections.sort(lista);
 
         Tabela tabela1 = new Tabela();
-        tabela1.setMjesto1(lista.get(0).getIme_i_Prezime());
-        tabela1.setMjesto2(lista.get(1).getIme_i_Prezime());
-        tabela1.setMjesto3(lista.get(2).getIme_i_Prezime());
-        tabela1.setMjesto4(lista.get(3).getIme_i_Prezime());
-        tabela1.setMjesto5(lista.get(4).getIme_i_Prezime());
-        tabela1.setMjesto6(lista.get(5).getIme_i_Prezime());
-        tabela1.setMjesto7(lista.get(6).getIme_i_Prezime());
-        tabela1.setMjesto8(lista.get(7).getIme_i_Prezime());
+        tabela1.setMjesto1(lista.get(0).getImeIPrezime());
+        tabela1.setMjesto2(lista.get(1).getImeIPrezime());
+        tabela1.setMjesto3(lista.get(2).getImeIPrezime());
+        tabela1.setMjesto4(lista.get(3).getImeIPrezime());
+        tabela1.setMjesto5(lista.get(4).getImeIPrezime());
+        tabela1.setMjesto6(lista.get(5).getImeIPrezime());
+        tabela1.setMjesto7(lista.get(6).getImeIPrezime());
+        tabela1.setMjesto8(lista.get(7).getImeIPrezime());
 
         TabelaDaoSQLImpl tabelaDaoSQL = new TabelaDaoSQLImpl();
         tabelaDaoSQL.update(tabela1);

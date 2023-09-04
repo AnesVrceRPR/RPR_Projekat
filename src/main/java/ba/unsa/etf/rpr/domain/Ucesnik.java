@@ -3,11 +3,25 @@ package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Ucesnik implements Comparable<Ucesnik>{
+public class Ucesnik implements Comparable<Ucesnik>, Serializable{
     private int id;
-    private String Ime_i_Prezime;
+    private String imeIPrezime;
     private int Rejting;
-    private Double Broj_Osvojenih_Bodova;
+    private Double brojOsvojenihBodova;
+
+    public Ucesnik() {
+        this.id = 0;
+        this.imeIPrezime = "";
+        Rejting = 0;
+        this.brojOsvojenihBodova = 0.;
+    }
+
+    public Ucesnik(int id, String imeIPrezime, int rejting, Double brojOsvojenihBodova) {
+        this.id = id;
+        this.imeIPrezime = imeIPrezime;
+        Rejting = rejting;
+        this.brojOsvojenihBodova = brojOsvojenihBodova;
+    }
 
     public int getId() {
         return id;
@@ -15,12 +29,12 @@ public class Ucesnik implements Comparable<Ucesnik>{
 
     public void setId(int id) {this.id = id;}
 
-    public String getIme_i_Prezime() {
-        return Ime_i_Prezime;
+    public String getImeIPrezime() {
+        return imeIPrezime;
     }
 
-    public void setIme_i_Prezime(String Ime_i_Prezime) {
-        this.Ime_i_Prezime = Ime_i_Prezime;
+    public void setImeIPrezime(String Ime_i_Prezime) {
+        this.imeIPrezime = Ime_i_Prezime;
     }
 
     public int getRejting() {
@@ -31,17 +45,17 @@ public class Ucesnik implements Comparable<Ucesnik>{
         Rejting = rejting;
     }
 
-    public Double getBroj_Osvojenih_Bodova() {
-        return Broj_Osvojenih_Bodova;
+    public Double getBrojOsvojenihBodova() {
+        return brojOsvojenihBodova;
     }
 
-    public void setBroj_Osvojenih_Bodova(Double broj_Osvojenih_Bodova) {
-        Broj_Osvojenih_Bodova = broj_Osvojenih_Bodova;
+    public void setBrojOsvojenihBodova(Double brojOsvojenihBodova) {
+        this.brojOsvojenihBodova = brojOsvojenihBodova;
     }
 
     @Override
     public String toString() {
-        return Ime_i_Prezime + " / " + Rejting + " / " + Broj_Osvojenih_Bodova;
+        return imeIPrezime + " / " + Rejting + " / " + brojOsvojenihBodova;
     }
 
     @Override
@@ -55,11 +69,11 @@ public class Ucesnik implements Comparable<Ucesnik>{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, Ime_i_Prezime, Rejting, Broj_Osvojenih_Bodova);
+        return Objects.hash(id, imeIPrezime, Rejting, brojOsvojenihBodova);
     }
 
     @Override
     public int compareTo(Ucesnik o) {
-        return (int)(o.Broj_Osvojenih_Bodova - this.Broj_Osvojenih_Bodova);
+        return (int)(o.brojOsvojenihBodova - this.brojOsvojenihBodova);
     }
 }

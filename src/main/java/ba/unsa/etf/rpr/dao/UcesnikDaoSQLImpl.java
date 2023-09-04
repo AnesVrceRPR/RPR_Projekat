@@ -28,7 +28,7 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
             if(rs.next()) { // result set is iterator.
                 Ucesnik ucesnik = new Ucesnik();
                 ucesnik.setId(rs.getInt("id"));
-                ucesnik.setIme_i_Prezime(rs.getString("Ime_i_Prezime"));
+                ucesnik.setImeIPrezime(rs.getString("Ime_i_Prezime"));
                 ucesnik.setRejting(rs.getInt("Rejting"));
                 rs.close();
                 return ucesnik;
@@ -47,9 +47,9 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         try{
             PreparedStatement stmt = this.connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
-            stmt.setString(1, ucesnik.getIme_i_Prezime());
+            stmt.setString(1, ucesnik.getImeIPrezime());
             stmt.setInt(2, ucesnik.getRejting());
-            stmt.setDouble(3, ucesnik.getBroj_Osvojenih_Bodova());
+            stmt.setDouble(3, ucesnik.getBrojOsvojenihBodova());
 
             stmt.executeUpdate();
 
@@ -70,8 +70,8 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
         String update = "UPDATE Ucesnik SET Ime_i_Prezime = ?, Broj_Osvojenih_Bodova = ? WHERE id = ?";
         try{
             PreparedStatement stmt = this.connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
-            stmt.setObject(1, ucesnik.getIme_i_Prezime());
-            stmt.setObject(2, ucesnik.getBroj_Osvojenih_Bodova());
+            stmt.setObject(1, ucesnik.getImeIPrezime());
+            stmt.setObject(2, ucesnik.getBrojOsvojenihBodova());
             stmt.setObject(3, ucesnik.getId());
             stmt.executeUpdate();
             return ucesnik;
@@ -103,9 +103,9 @@ public class UcesnikDaoSQLImpl implements UcesnikDao {
             while (rs.next()){ // result set is iterator.
                 Ucesnik ucesnik = new Ucesnik();
                 ucesnik.setId(rs.getInt("id"));
-                ucesnik.setIme_i_Prezime(rs.getString("Ime_i_Prezime"));
+                ucesnik.setImeIPrezime(rs.getString("Ime_i_Prezime"));
                 ucesnik.setRejting(rs.getInt("Rejting"));
-                ucesnik.setBroj_Osvojenih_Bodova(rs.getDouble("Broj_Osvojenih_Bodova"));
+                ucesnik.setBrojOsvojenihBodova(rs.getDouble("Broj_Osvojenih_Bodova"));
                 ucesnici.add(ucesnik);
             }
             rs.close();

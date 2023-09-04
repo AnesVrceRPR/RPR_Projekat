@@ -27,7 +27,7 @@ public class App
 
         for(Ucesnik ucesnik : lista)
         {
-            System.out.println(ucesnik.getIme_i_Prezime());
+            System.out.println(ucesnik.getImeIPrezime());
         }
 
     }
