@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.controller;
 
 import ba.unsa.etf.rpr.Exception.unosNijeIspravan;
+import ba.unsa.etf.rpr.business.TabelaMenager;
 import ba.unsa.etf.rpr.dao.OdigranaKolaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
@@ -54,8 +55,8 @@ public class kontroler3 implements Initializable {
 
         Collections.sort(lista);
 
-        TabelaDaoSQLImpl tabelaDaoSQLImpl = new TabelaDaoSQLImpl();
-        Tabela tabela1 = tabelaDaoSQLImpl.getById(0);
+        TabelaMenager tabelaMenager = new TabelaMenager();
+        Tabela tabela1 = tabelaMenager.getById(0);
 
         igrac1.setText(tabela1.getMjesto1());
         igrac2.setText(tabela1.getMjesto2());
