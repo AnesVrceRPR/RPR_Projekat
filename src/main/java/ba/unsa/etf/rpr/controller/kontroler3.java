@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.controller;
 
-import ba.unsa.etf.rpr.Exception.NijeUnesenIspravanBrojException;
+import ba.unsa.etf.rpr.Exception.unosNijeIspravan;
 import ba.unsa.etf.rpr.dao.OdigranaKolaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.TabelaDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.UcesnikDaoSQLImpl;
@@ -97,7 +97,7 @@ public class kontroler3 implements Initializable {
             Double.parseDouble(igr8.getText());
         }catch(Exception e)
         {
-            throw new NijeUnesenIspravanBrojException(e.getMessage());
+            throw new unosNijeIspravan(e.getMessage());
         }
     }
 
