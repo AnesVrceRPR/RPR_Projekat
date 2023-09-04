@@ -13,6 +13,11 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  */
 
 public class AppFX extends Application {
+
+    /**
+     * kreira početni prozor
+     */
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Prozor1.fxml"));
