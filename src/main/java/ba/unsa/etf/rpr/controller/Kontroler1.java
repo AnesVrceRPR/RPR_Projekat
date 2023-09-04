@@ -13,9 +13,21 @@ import java.io.IOException;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+
+/**
+ * kontroler koji upravlja prozorom 1
+ */
+
 public class Kontroler1 {
     public TextField ime;
     public PasswordField lozinka;
+
+
+    /**
+     * metoda koja se poziva kad se kad se pritisne dugme za potvrdu username-a i password-a
+     * provjerava da li su ispravni korisnicki podacii otvara jedan od dva prozora u zavisnosti
+     * jesu li ispravni podaci ili ne
+     */
 
     public void buttonclick(ActionEvent actionEvent) throws IOException {
 
