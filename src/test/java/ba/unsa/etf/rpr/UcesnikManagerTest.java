@@ -24,6 +24,13 @@ public class UcesnikManagerTest {
     @Test
     public void rejtingManjiOd0Test2()
     {
+        Ucesnik ucesnik = new Ucesnik();
+        ucesnik.setImeIPrezime("anes");
+        ucesnik.setRejting(-2);
+        ucesnik.setBrojOsvojenihBodova(2.);
 
+        UcesnikManager ucesnikManager = new UcesnikManager();
+        Exception e = assertThrows(RuntimeException.class, ()-> ucesnikManager.update(ucesnik));
+        assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
     }
 }
