@@ -58,14 +58,16 @@ public class UcesnikManagerTest {
 
     @Test
     public void provjeraDelete() throws RuntimeException{
+        List<Ucesnik> ucesnici = new ArrayList<>();
+        ucesnici.addAll(Arrays.asList(new Ucesnik(1, "isam", 1000, 2.), new Ucesnik(2, "anes", 1200, 2.)));
+
         UcesnikDaoSQLImpl ucesnikDaoSQLMock = Mockito.mock(UcesnikDaoSQLImpl.class);
-        ucesnikDaoSQLMock.add(new Ucesnik(1, "anes", 1400, 3.));
-        ucesnikDaoSQLMock.add(new Ucesnik(2, "isam", 1400, 3.));
-        ucesnikDaoSQLMock.add(new Ucesnik(3, "nejla", 1400, 3.));
+        Mockito.when(ucesnikDaoSQLMock.getAll()).thenReturn(ucesnici);
 
-        List<Ucesnik> lista = ucesnikDaoSQLMock.getAll();
+        UcesnikManager ucesnikManager = new UcesnikManager();
 
-        for(Ucesnik ucesnik : lista) System.out.println(ucesnik);
+        Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.delete(3));
+        assertTrue(e.getMessage().contains("Korisnik ne postoji"));
     }
 
    @Test
@@ -91,7 +93,5 @@ public class UcesnikManagerTest {
         Exception e = assertThrows(RuntimeException.class, () -> ucesnikManager.update(ucesnik1));
         assertTrue(e.getMessage().contains("Rejting ne može biti manji od 0"));
     }
-
-
 
 }
